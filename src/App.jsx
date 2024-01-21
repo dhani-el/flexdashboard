@@ -1,14 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
 
 import "./index.css";
+import Home from "./Home/Jsx";
+import Analytics from "./Analytics/Jsx";
+import Entry from "./Entry/Jsx";
+
+
+const router  = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>,
+  },
+  {
+    path:"analytics",
+    element:<Analytics/>
+  },
+   {
+    path:"entry",
+    element:<Entry/>
+  },
+])
 
 const App = () => (
-  <div className="container">
-    <div>Name: flexdashboard</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS not for long</div>
-  </div>
+  <RouterProvider router={router} />
 );
 ReactDOM.render(<App />, document.getElementById("app"));
