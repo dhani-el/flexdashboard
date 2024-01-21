@@ -7,6 +7,5 @@ import Analytics from "./Analytics/Jsx";
 const App = () => (
   <div className="container">
     <Analytics/>
-  </div>
-);
+  </div>);
 ReactDOM.render(<App />, document.getElementById("app"));
