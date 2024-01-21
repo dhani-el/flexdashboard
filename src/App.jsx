@@ -8,7 +8,7 @@ const App = () => (
     <div>Name: flexdashboard</div>
     <div>Framework: react</div>
     <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
+    <div>CSS: Empty CSS not for long</div>
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));
