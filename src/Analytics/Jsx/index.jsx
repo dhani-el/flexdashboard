@@ -3,6 +3,6 @@
 
 export default function Analytics(){
     return <div>
-
-    </div>
+                <p>This is the analytics page</p>
+          </div>
 }
