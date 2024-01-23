@@ -1,15 +1,20 @@
 import { motion } from "framer-motion";
 import { AttachMoney,Paid,AccountBalanceWallet, CreditCard,Payments } from "@mui/icons-material";
-import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area,Bar, BarChart, Legend } from "recharts";
+import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area,Bar, BarChart, Legend, PieChart, Pie } from "recharts";
 import "../Styles/index.css"
 
-
+const constants = {
+    INCOME :"INCOME",
+    EXPENSES:"EXPENSES",
+}
 
 export default function Analytics(){
     return <div id = "analyticsContainer">
                  <AnalysisDisplay/>   
                  <OverViewComponent/>
                  <DayTransactionChart/>
+                 <Transactions transactions={[]}/>
+                 <Expectations/>
           </div>
 }
 
@@ -84,4 +89,60 @@ function DayTransactionChart(){
                     <Bar dataKey="expenses" fill="#82ca9d" />
                 </BarChart>
             </motion.div>
+}
+
+function Transactions({transactions}){
+    return <motion.div>
+              {!!transactions.length &&  transactions.map(function(transaction){
+                    if (transaction.type === constants.INCOME) {
+                        return <Income description={transaction.description} amount={transaction.amount} />
+                    }else if (transaction.type === constants.EXPENSES) {
+                        return <Expenses description={transaction.description} amount={transaction.amount}  />
+                    }
+                    return
+                })}
+    </motion.div>
+}
+
+function Expenses({description,amount}){
+    return <motion.div>
+        <motion.p>{description}</motion.p>
+        <motion.p>{amount}</motion.p>
+    </motion.div>
+}
+
+function Income({description,amount}){
+    return <motion.div>
+                <motion.p>{description}</motion.p>
+                <motion.p>{amount}</motion.p>
+    </motion.div>
+}
+
+function Expectations(){
+    return <motion.div>
+                <ExpectedIncome/>
+                <ExpectedExpenses/>
+    </motion.div>
+}
+
+function ExpectedIncome(){
+    const data = [{name:"rand", value:34}]
+    return <motion.div>
+                <PieChart width={730} height={250}>
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} fill="#8884d8" />
+                    <Tooltip/>
+                    <Legend/>
+                </PieChart>
+    </motion.div>
+}
+
+function ExpectedExpenses(){
+    const data = [{name:"rando", value:67000},{name:"yam",value:48000}]
+    return <motion.div>
+                <PieChart width={730} height={250}>
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%"  innerRadius={60} fill="#8884d8" />
+                    <Tooltip/>
+                    <Legend/>
+                </PieChart>
+    </motion.div>   
 }
