@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { AttachMoney,Paid,AccountBalanceWallet, CreditCard,Payments } from "@mui/icons-material";
-import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area,Bar, BarChart, Legend, PieChart, Pie } from "recharts";
+import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area,Bar, BarChart, Legend, PieChart, Pie, LineChart, Line } from "recharts";
 import "../Styles/index.css"
 
 const constants = {
@@ -15,6 +15,8 @@ export default function Analytics(){
                  <DayTransactionChart/>
                  <Transactions transactions={[]}/>
                  <Expectations/>
+                 <UnexpectedIncomeTrend/>
+                 <UnexpectedExpensesTrend/>
           </div>
 }
 
@@ -145,4 +147,30 @@ function ExpectedExpenses(){
                     <Legend/>
                 </PieChart>
     </motion.div>   
+}
+
+function UnexpectedIncomeTrend(){
+    const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
+    return <motion.div>
+                <LineChart width={600} height={300} data={data} >
+                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="pv" stroke="#15bab3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip/>
+                </LineChart>
+    </motion.div>
+}
+
+function UnexpectedExpensesTrend(){
+    const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
+    return <motion.div>
+                <LineChart width={600} height={300} data={data} >
+                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="pv" stroke="#15bab3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip/>
+                </LineChart>
+    </motion.div>
 }
