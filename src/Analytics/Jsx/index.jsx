@@ -17,6 +17,7 @@ export default function Analytics(){
                  <Expectations/>
                  <UnexpectedIncomeTrend/>
                  <UnexpectedExpensesTrend/>
+                 <IncomeUsage value={42} />
           </div>
 }
 
@@ -173,4 +174,10 @@ function UnexpectedExpensesTrend(){
                     <Tooltip/>
                 </LineChart>
     </motion.div>
+}
+
+function IncomeUsage({value}){
+            return <motion.div>
+                        <motion.p>{value}%</motion.p>
+            </motion.div>
 }
