@@ -1,15 +1,23 @@
 import { motion } from "framer-motion";
 import { AttachMoney,Paid,AccountBalanceWallet, CreditCard,Payments } from "@mui/icons-material";
-import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area,Bar, BarChart, Legend } from "recharts";
+import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area,Bar, BarChart, Legend, PieChart, Pie, LineChart, Line } from "recharts";
 import "../Styles/index.css"
 
-
+const constants = {
+    INCOME :"INCOME",
+    EXPENSES:"EXPENSES",
+}
 
 export default function Analytics(){
     return <div id = "analyticsContainer">
                  <AnalysisDisplay/>   
                  <OverViewComponent/>
                  <DayTransactionChart/>
+                 <Transactions transactions={[]}/>
+                 <Expectations/>
+                 <UnexpectedIncomeTrend/>
+                 <UnexpectedExpensesTrend/>
+                 <IncomeUsage value={42} />
           </div>
 }
 
@@ -83,5 +91,93 @@ function DayTransactionChart(){
                     <Bar dataKey="income" fill="#8884d8" />
                     <Bar dataKey="expenses" fill="#82ca9d" />
                 </BarChart>
+            </motion.div>
+}
+
+function Transactions({transactions}){
+    return <motion.div>
+              {!!transactions.length &&  transactions.map(function(transaction){
+                    if (transaction.type === constants.INCOME) {
+                        return <Income description={transaction.description} amount={transaction.amount} />
+                    }else if (transaction.type === constants.EXPENSES) {
+                        return <Expenses description={transaction.description} amount={transaction.amount}  />
+                    }
+                    return
+                })}
+    </motion.div>
+}
+
+function Expenses({description,amount}){
+    return <motion.div>
+        <motion.p>{description}</motion.p>
+        <motion.p>{amount}</motion.p>
+    </motion.div>
+}
+
+function Income({description,amount}){
+    return <motion.div>
+                <motion.p>{description}</motion.p>
+                <motion.p>{amount}</motion.p>
+    </motion.div>
+}
+
+function Expectations(){
+    return <motion.div>
+                <ExpectedIncome/>
+                <ExpectedExpenses/>
+    </motion.div>
+}
+
+function ExpectedIncome(){
+    const data = [{name:"rand", value:34}]
+    return <motion.div>
+                <PieChart width={730} height={250}>
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} fill="#8884d8" />
+                    <Tooltip/>
+                    <Legend/>
+                </PieChart>
+    </motion.div>
+}
+
+function ExpectedExpenses(){
+    const data = [{name:"rando", value:67000},{name:"yam",value:48000}]
+    return <motion.div>
+                <PieChart width={730} height={250}>
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%"  innerRadius={60} fill="#8884d8" />
+                    <Tooltip/>
+                    <Legend/>
+                </PieChart>
+    </motion.div>   
+}
+
+function UnexpectedIncomeTrend(){
+    const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
+    return <motion.div>
+                <LineChart width={600} height={300} data={data} >
+                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="pv" stroke="#15bab3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip/>
+                </LineChart>
+    </motion.div>
+}
+
+function UnexpectedExpensesTrend(){
+    const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
+    return <motion.div>
+                <LineChart width={600} height={300} data={data} >
+                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="pv" stroke="#15bab3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip/>
+                </LineChart>
+    </motion.div>
+}
+
+function IncomeUsage({value}){
+            return <motion.div>
+                        <motion.p>{value}%</motion.p>
             </motion.div>
 }
