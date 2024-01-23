@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { AttachMoney,Paid,AccountBalanceWallet, CreditCard,Payments } from "@mui/icons-material";
 import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area,Bar, BarChart, Legend, PieChart, Pie, LineChart, Line } from "recharts";
+import { CircularProgress, LinearProgress } from "@mui/material";
 import "../Styles/index.css"
 
 const constants = {
@@ -110,6 +111,7 @@ function Transactions({transactions}){
 function Expenses({description,amount}){
     return <motion.div>
         <motion.p>{description}</motion.p>
+        <LinearProgress variant="determinate" value={amount} />
         <motion.p>{amount}</motion.p>
     </motion.div>
 }
@@ -117,6 +119,7 @@ function Expenses({description,amount}){
 function Income({description,amount}){
     return <motion.div>
                 <motion.p>{description}</motion.p>
+                    <LinearProgress variant="determinate" value={amount} />
                 <motion.p>{amount}</motion.p>
     </motion.div>
 }
@@ -178,6 +181,7 @@ function UnexpectedExpensesTrend(){
 
 function IncomeUsage({value}){
             return <motion.div>
+                        <CircularProgress variant="determinate" value={value} />
                         <motion.p>{value}%</motion.p>
             </motion.div>
 }
