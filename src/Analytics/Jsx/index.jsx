@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { AttachMoney,Paid,AccountBalanceWallet, CreditCard,Payments } from "@mui/icons-material";
-import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area } from "recharts";
+import { AreaChart,XAxis,YAxis, CartesianGrid, Tooltip, Area,Bar, BarChart, Legend } from "recharts";
 import "../Styles/index.css"
 
 
@@ -9,6 +9,7 @@ export default function Analytics(){
     return <div id = "analyticsContainer">
                  <AnalysisDisplay/>   
                  <OverViewComponent/>
+                 <DayTransactionChart/>
           </div>
 }
 
@@ -69,4 +70,18 @@ function OverViewComponent(){
                 </AreaChart>
 
     </motion.div>
+}
+
+function DayTransactionChart(){
+    const data = [{name:"day1", income:175000, expenses:23000 },{name:"day2",income:186000, expenses:29000}]
+    return <motion.div>
+                <BarChart  width={730} height={250} data={data} >
+                    <XAxis dataKey={"name"}/>
+                    <YAxis/>
+                    <Legend/>
+                    <Tooltip/>
+                    <Bar dataKey="income" fill="#8884d8" />
+                    <Bar dataKey="expenses" fill="#82ca9d" />
+                </BarChart>
+            </motion.div>
 }
