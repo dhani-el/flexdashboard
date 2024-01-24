@@ -62,16 +62,22 @@ $label-color :grey;
             height: 25%;
             padding-left: 2rem;
             display: flex;
+            justify-content: space-around;
             #overViewComponentDiv{
-                width: 65%;
+                width: 60%;
                 height: 25%;
-                padding-left: 2rem;
+                padding: 2rem;
+                padding-right: 1rem;
+                border-radius: 1rem;
+                background-color: rgb(23, 20, 20);
             }
             #expectationsDiv{
                 width: 33%;
                 height: 25%;
                 padding-right: 2rem;
                 display: flex;
+                border-radius: 1rem;
+                background-color: rgb(23, 20, 20);
                 .subExpectation{
                     width: 45%;
                     height:98%;

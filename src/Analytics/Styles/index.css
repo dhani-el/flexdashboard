@@ -62,17 +62,23 @@
     height: 25%;
     padding-left: 2rem;
     display: flex;
+    justify-content: space-around;
   }
   #analyticsContainer #overviewAndExpectationsDiv #overViewComponentDiv {
-    width: 65%;
+    width: 60%;
     height: 25%;
-    padding-left: 2rem;
+    padding: 2rem;
+    padding-right: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(23, 20, 20);
   }
   #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv {
     width: 33%;
     height: 25%;
     padding-right: 2rem;
     display: flex;
+    border-radius: 1rem;
+    background-color: rgb(23, 20, 20);
   }
   #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv .subExpectation {
     width: 45%;

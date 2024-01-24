@@ -137,9 +137,9 @@ function Expectations(){
 function ExpectedIncome(){
     const data = [{name:"rand", value:34}]
     return <motion.div className="subExpectation">
-            <ResponsiveContainer aspect={1}>
+            <ResponsiveContainer height={300}>
                 <PieChart >
-                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} fill="#8884d8" />
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} fill="#8884d8" />
                     <Tooltip/>
                     <Legend/>
                 </PieChart>
@@ -150,9 +150,9 @@ function ExpectedIncome(){
 function ExpectedExpenses(){
     const data = [{name:"rando", value:67000},{name:"yam",value:48000}]
     return <motion.div className="subExpectation" >
-            <ResponsiveContainer aspect={2}>
+            <ResponsiveContainer height={300}>
                 <PieChart >
-                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%"  innerRadius={60} fill="#8884d8" />
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%"  innerRadius={40} fill="#15bab3" />
                     <Tooltip/>
                     <Legend/>
                 </PieChart>
