@@ -14,6 +14,9 @@ $label-color :grey;
 #analyticsContainer{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     #FirstLevelDataContainer{
         width: 100%;
     }
@@ -23,6 +26,7 @@ $label-color :grey;
     #analyticsContainer{
         background-color: rgb(35, 35, 37);
         color: white;
+        padding: 1rem;
         #FirstLevelDataContainer{
             display: flex;
             justify-content: space-around;
@@ -67,7 +71,7 @@ $label-color :grey;
                 width: 60%;
                 height: 25%;
                 padding: 2rem;
-                padding-right: 1rem;
+                padding-right: 2rem;
                 border-radius: 1rem;
                 background-color: rgb(23, 20, 20);
             }
@@ -78,11 +82,70 @@ $label-color :grey;
                 display: flex;
                 border-radius: 1rem;
                 background-color: rgb(23, 20, 20);
+                align-items: center;
+                justify-content:center;
                 .subExpectation{
                     width: 45%;
                     height:98%;
                 }
             }
+        }
+        #dayTransactionsAndIncome{
+            width: 100%;
+            display: flex;
+            padding: 2rem;
+            justify-content: space-around;
+            align-items: center;
+            #dayChartsAndTransactionsDiv{
+                width: 60%;
+                display: flex;
+                justify-content: space-between;
+                #DayTransactionChartDiv{
+                    width: 45%;
+                    border: 1rem;
+                    background-color: black;
+                    padding: 2rem;
+                    border-radius: 1rem;
+                }
+                #transactionsDiv{
+                    width: 45%;
+                    border-radius: 1rem;
+                    background-color: black;
+                    padding: 2rem;
+                    #transactionExpenses,#transactionIncome{
+                        display: flex;
+                        flex-direction: column;
+                        padding: 1rem 0;
+                        #textData{
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+                    
+                }
+            }
+            #incomeUsage{
+                width: 33%;
+                display:flex ;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                border-radius: 1rem;
+                padding: 2rem;
+                background-color: black;
+                align-self: stretch;
+                p{
+                    position: absolute;
+                    font-size: 3rem;
+                }
+            }
+        }
+        #unexpectedTrends{
+            width: 90%;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: black;
         }
     }
 }

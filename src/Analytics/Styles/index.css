@@ -11,6 +11,9 @@
 #analyticsContainer {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #analyticsContainer #FirstLevelDataContainer {
   width: 100%;
@@ -20,6 +23,7 @@
   #analyticsContainer {
     background-color: rgb(35, 35, 37);
     color: white;
+    padding: 1rem;
   }
   #analyticsContainer #FirstLevelDataContainer {
     display: flex;
@@ -68,7 +72,7 @@
     width: 60%;
     height: 25%;
     padding: 2rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
     border-radius: 1rem;
     background-color: rgb(23, 20, 20);
   }
@@ -79,9 +83,67 @@
     display: flex;
     border-radius: 1rem;
     background-color: rgb(23, 20, 20);
+    align-items: center;
+    justify-content: center;
   }
   #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv .subExpectation {
     width: 45%;
     height: 98%;
+  }
+  #analyticsContainer #dayTransactionsAndIncome {
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #DayTransactionChartDiv {
+    width: 45%;
+    border: 1rem;
+    background-color: black;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv {
+    width: 45%;
+    border-radius: 1rem;
+    background-color: black;
+    padding: 2rem;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses, #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #textData, #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #textData {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #incomeUsage {
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: black;
+    align-self: stretch;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #incomeUsage p {
+    position: absolute;
+    font-size: 3rem;
+  }
+  #analyticsContainer #unexpectedTrends {
+    width: 90%;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: black;
   }
 }/*# sourceMappingURL=index.css.map */
