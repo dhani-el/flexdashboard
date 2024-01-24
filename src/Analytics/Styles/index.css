@@ -1,1 +1,81 @@
-/*# sourceMappingURL=index.css.map */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: black;
+}
+
+#analyticsContainer {
+  width: 100%;
+  height: 100%;
+}
+#analyticsContainer #FirstLevelDataContainer {
+  width: 100%;
+}
+
+@media (orientation: landscape) {
+  #analyticsContainer {
+    background-color: rgb(35, 35, 37);
+    color: white;
+  }
+  #analyticsContainer #FirstLevelDataContainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+  }
+  #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer {
+    width: 18%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(23, 20, 20);
+    display: flex;
+    align-items: center;
+  }
+  #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
+    color: rgb(6, 238, 6);
+    background-color: rgb(35, 35, 35);
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+  }
+  #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 1rem;
+  }
+  #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details .label {
+    font-size: x-small;
+    color: grey;
+  }
+  #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details .amount {
+    font-size: xx-large;
+  }
+  #analyticsContainer #overviewAndExpectationsDiv {
+    width: 100%;
+    height: 25%;
+    padding-left: 2rem;
+    display: flex;
+  }
+  #analyticsContainer #overviewAndExpectationsDiv #overViewComponentDiv {
+    width: 65%;
+    height: 25%;
+    padding-left: 2rem;
+  }
+  #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv {
+    width: 33%;
+    height: 25%;
+    padding-right: 2rem;
+    display: flex;
+  }
+  #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv .subExpectation {
+    width: 45%;
+    height: 98%;
+  }
+}/*# sourceMappingURL=index.css.map */
