@@ -10,6 +10,8 @@ const constants = {
     EXPENSES:"EXPENSES",
 }
 
+const transactionData = [{type:constants.EXPENSES,description:"Shawarma", amount:1500},{type:constants.INCOME,description:"Daily Bonus", amount:4500},{type:constants.EXPENSES,description:"Transport", amount:600}]
+
 export default function Analytics(){
     return <div id = "analyticsContainer">
                  <FirstLevelData/>
