@@ -132,10 +132,10 @@ function Expenses({description,amount, percentage}){
     return <motion.div id="transactionExpenses" >
         <motion.div id="textData">
             <motion.p id="description">{description}</motion.p>
-            <motion.p id="amount">{amount}</motion.p>
+            <motion.p id="amount">-{amount}</motion.p>
         </motion.div>
         <motion.div id="progressbarDiv" >
-            <LinearProgress variant="determinate" value={percentage} />
+            <LinearProgress variant="determinate" value={percentage}  />
         </motion.div>
 
     </motion.div>
@@ -145,7 +145,7 @@ function Income({description,amount, percentage}){
     return <motion.div id="transactionIncome">
                 <motion.div id="textData">
                     <motion.p id="description">{description}</motion.p>
-                    <motion.p id="amount">{amount}</motion.p>
+                    <motion.p id="amount">+{amount}</motion.p>
                 </motion.div>
                 <motion.div id="progressbarDiv" >
                     <LinearProgress variant="determinate" value={percentage} />
