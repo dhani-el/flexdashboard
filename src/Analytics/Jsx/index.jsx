@@ -10,37 +10,51 @@ const constants = {
     EXPENSES:"EXPENSES",
 }
 
-const transactionData = [{type:constants.EXPENSES,description:"Shawarma",percentage:45, amount:1500},{type:constants.INCOME,description:"Daily Bonus",percentage:32, amount:4500},{type:constants.EXPENSES,description:"Transport",percentage:21, amount:600}]
-
 export default function Analytics(){
+    const transactionData = [{type:constants.EXPENSES,description:"Shawarma",percentage:45, amount:1500},{type:constants.INCOME,description:"Daily Bonus",percentage:32, amount:4500},{type:constants.EXPENSES,description:"Transport",percentage:21, amount:600}]
+    const firstLevelDataSet = {fixedIncome:"170,000",fixedExpenses:"92,400",miscIncome:"12,500",miscExpenses:"9,750",balance:"80,150"}
+    const overViewData = [{name:"Expenses", total1:500000,total2:45786},{name:"Income", total1:712000,total2:823940}]
+    const overviewDataKeys = ["name","total1","total2"];
+    const dayTransacdata = [{name:"day1", income:175000, expenses:23000 },{name:"day2",income:186000, expenses:29000}];
+    const dayTransacdataKeys = ["name","income","expenses" ];
+    const incomeUsageData = 74
+    const trendData = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
+    const trendDataKeys = ["uv","pv","name"];
+    const incData = [{name:"rand", value:34}]
+    const incDataKey = "value"
+    const incNameKey = "name"
+    const expData = [{name:"rando", value:67000},{name:"yam",value:48000}]
+    const expDataKey = "value"
+    const expNameKey = "name"
+
     return <div id = "analyticsContainer">
-                 <FirstLevelData/>
+                 <FirstLevelData amounts={firstLevelDataSet}/>
                  <motion.div id="overviewAndExpectationsDiv">
-                    <OverViewComponent/>
-                    <Expectations/>
+                    <OverViewComponent data={overViewData} dataKeys={overviewDataKeys}/>
+                    <Expectations incData = {incData} incDataKey = {incDataKey} incNameKey = {incNameKey} expData = {expData} expDataKey = {expDataKey} expNameKey = {expNameKey} />
                  </motion.div>
                  <motion.div id="dayTransactionsAndIncome">
                     <motion.div id="dayChartsAndTransactionsDiv" >
-                        <DayTransactionChart/>
-                        <Transactions transactions={transactionData}/>
+                        <DayTransactionChart data={dayTransacdata} dataKeys={dayTransacdataKeys}/>
+                        <Transactions transactions={transactionData}  />
                     </motion.div>
                     <motion.div id="bigScreenTransaction">
                         <Transactions transactions={transactionData}/>
-                        <IncomeUsage value={42} />
+                        <IncomeUsage value={incomeUsageData} />
                     </motion.div>
-                    <IncomeUsage value={42} />
+                    <IncomeUsage value={incomeUsageData} />
                 </motion.div>   
-                 <UnexpectedIncomeTrend/>
+                 <UnexpectedIncomeTrend data={trendData} dataKeys={trendDataKeys} />
           </div>
 }
 
-function FirstLevelData(){
+function FirstLevelData({amounts}){
     return <motion.div id="FirstLevelDataContainer">
-                <SingleFirstLevelData Icon={<Paid/>} label="Fixed Income" amount="170,000" />
-                <SingleFirstLevelData Icon={<CreditCard/>}  label="Fixed Expenses" amount="92,400" />
-                <SingleFirstLevelData Icon={<AttachMoney/>} label="Misc Income" amount="12,100" />
-                <SingleFirstLevelData Icon= {<Payments/>} label="Misc Expenses" amount="92,400" />
-                <SingleFirstLevelData Icon={<AccountBalanceWallet/>} label="Balance" amount="92,400" />
+                <SingleFirstLevelData Icon={<Paid/>} label="Fixed Income" amount={amounts.fixedIncome} />
+                <SingleFirstLevelData Icon={<CreditCard/>}  label="Fixed Expenses" amount={amounts.fixedExpenses} />
+                <SingleFirstLevelData Icon={<AttachMoney/>} label="Misc Income" amount={amounts.miscIncome} />
+                <SingleFirstLevelData Icon= {<Payments/>} label="Misc Expenses" amount={amounts.miscExpenses} />
+                <SingleFirstLevelData Icon={<AccountBalanceWallet/>} label="Balance" amount={amounts.balance} />
             </motion.div>
 }
 
@@ -57,13 +71,12 @@ function SingleFirstLevelData({Icon,label,amount}){
     </motion.div>
 }
 
-function OverViewComponent(){
-    const tempData = [{name:"Expenses", total1:500000,total2:45786},{name:"Income", total1:712000,total2:823940}]
+function OverViewComponent({data,dataKeys}){
 
     return <motion.div id="overViewComponentDiv" >
             <motion.p>Overview</motion.p>
               <ResponsiveContainer aspect={2}  >
-                <AreaChart  data={tempData} >
+                <AreaChart  data={data} >
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
@@ -74,29 +87,28 @@ function OverViewComponent(){
                         <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
                     </linearGradient>
                 </defs>
-                    <XAxis dataKey="name"/>
+                    <XAxis dataKey={dataKeys[0]}/>
                     <YAxis/>
                     <Tooltip/>
-                    <Area type="monotone" dataKey="total1" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-                    <Area type="monotone" dataKey="total2" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
+                    <Area type="monotone" dataKey={dataKeys[1]} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                    <Area type="monotone" dataKey={dataKeys[2]} stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
                 </AreaChart>
               </ResponsiveContainer>  
 
     </motion.div>
 }
 
-function DayTransactionChart(){
-    const data = [{name:"day1", income:175000, expenses:23000 },{name:"day2",income:186000, expenses:29000}]
+function DayTransactionChart({data,dataKeys}){
     return <motion.div id="DayTransactionChartDiv" >
             <motion.p>Performance</motion.p>
               <ResponsiveContainer height={250}>
                 <BarChart data={data} >
-                    <XAxis dataKey={"name"}/>
+                    <XAxis dataKey={dataKeys[0]}/>
                     <YAxis/>
                     <Legend/>
                     <Tooltip/>
-                    <Bar dataKey="income" fill="#8884d8" />
-                    <Bar dataKey="expenses" fill="#82ca9d" />
+                    <Bar dataKey={dataKeys[1]} fill="#8884d8" />
+                    <Bar dataKey= {dataKeys[2]} fill="#82ca9d" />
                 </BarChart>
               </ResponsiveContainer>
             </motion.div>
@@ -141,22 +153,23 @@ function Income({description,amount, percentage}){
     </motion.div>
 }
 
-function Expectations(){
+function Expectations({incData, incDataKey, incNameKey, expData, expDataKey, expNameKey}){
+
     return <motion.div id="expectationsDiv">
                 <motion.p>Target</motion.p>
                 <motion.div>
-                    <ExpectedIncome/>
-                    <ExpectedExpenses/>
+                    <ExpectedIncome data={incData} dataKey={incDataKey} nameKey={incNameKey} />
+                    <ExpectedExpenses data={expData} dataKey={expDataKey} nameKey={expNameKey}  />
                 </motion.div>
     </motion.div>
 }
 
-function ExpectedIncome(){
-    const data = [{name:"rand", value:34}]
+function ExpectedIncome({data,nameKey,dataKey}){
+
     return <motion.div className="subExpectation">
             <ResponsiveContainer height={300}>
                 <PieChart >
-                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} fill="#8884d8" label />
+                    <Pie data={data} dataKey={dataKey} nameKey={nameKey} cx="50%" cy="50%" innerRadius={40} fill="#15bab3" label />
                     <Tooltip/>
                     <Legend/>
                 </PieChart>
@@ -164,12 +177,11 @@ function ExpectedIncome(){
     </motion.div>
 }
 
-function ExpectedExpenses(){
-    const data = [{name:"rando", value:67000},{name:"yam",value:48000}]
+function ExpectedExpenses({data,nameKey,dataKey}){
     return <motion.div className="subExpectation" >
             <ResponsiveContainer height={300}>
                 <PieChart >
-                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%"  innerRadius={40} fill="#15bab3" label />
+                    <Pie data={data} dataKey={dataKey} nameKey={nameKey} cx="50%" cy="50%" innerRadius={40} fill="#8884d8" label />
                     <Tooltip/>
                     <Legend/>
                 </PieChart>
@@ -177,24 +189,23 @@ function ExpectedExpenses(){
     </motion.div>   
 }
 
-function UnexpectedIncomeTrend(){
-    const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
+function UnexpectedIncomeTrend({data,dataKeys}){
+
     return <motion.div id="unexpectedTrends">
                 <motion.p>
                     Miscellanous Trends
                 </motion.p>
                 <ResponsiveContainer height={300}>
                 <LineChart data={data} >
-                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="pv" stroke="#15bab3" />
-                    <XAxis dataKey="name" />
+                    <Line type="monotone" dataKey={dataKeys[0]} stroke="#8884d8" />
+                    <Line type="monotone" dataKey={dataKeys[1]} stroke="#15bab3" />
+                    <XAxis dataKey={dataKeys[2]} />
                     <YAxis />
                     <Tooltip/>
                 </LineChart>
                 </ResponsiveContainer>
     </motion.div>
 }
-
 
 function IncomeUsage({value}){
             return <motion.div id="incomeUsage">

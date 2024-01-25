@@ -334,7 +334,7 @@ $default-border-radius:1rem;
             width: 100%;
             display: flex;
             flex-direction: row;
-            padding: calc($default-paddng * 2);
+            padding: 2rem;
             justify-content: space-around;
             align-items: center;
             gap: 0;
@@ -347,14 +347,14 @@ $default-border-radius:1rem;
                 #DayTransactionChartDiv{
                     width: 45%;
                     border: 1rem;
-                    background-color: black;
+                    background-color: $card-background-color;
                     padding: 2rem;
                     border-radius: 1rem;
                 }
                 #transactionsDiv{
                     width: 45%;
                     border-radius: 1rem;
-                    background-color: black;
+                    background-color: $card-background-color;
                     padding: 2rem;
                     #transactionExpenses,#transactionIncome{
                         display: flex;
@@ -374,9 +374,9 @@ $default-border-radius:1rem;
                 align-items: center;
                 justify-content: center;
                 position: relative;
-                border-radius: $default-border-radius;
-                padding: calc($default-paddng * 2);
-                background-color: black;
+                border-radius: 1rem;
+                padding: 2rem;
+                background-color: $card-background-color;
                 align-self: stretch;
                 p{
                     position: absolute;
@@ -386,8 +386,8 @@ $default-border-radius:1rem;
         }
         #unexpectedTrends{
             width: 90%;
-            padding: calc($default-paddng * 2);
-            border-radius: $default-border-radius;
+            padding: 2rem;
+            border-radius: 1rem;
             background-color: $card-background-color;
             align-self: center;
         }
