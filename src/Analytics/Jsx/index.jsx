@@ -10,25 +10,28 @@ const constants = {
     EXPENSES:"EXPENSES",
 }
 
+const transactionData = [{type:constants.EXPENSES,description:"Shawarma",percentage:45, amount:1500},{type:constants.INCOME,description:"Daily Bonus",percentage:32, amount:4500},{type:constants.EXPENSES,description:"Transport",percentage:21, amount:600}]
+
 export default function Analytics(){
     return <div id = "analyticsContainer">
                  <FirstLevelData/>
                  <motion.div id="overviewAndExpectationsDiv">
                     <OverViewComponent/>
                     <Expectations/>
-                 </motion.div>   
-                 <DayTransactionChart/>
-                 <Transactions transactions={[]}/>
+                 </motion.div>
+                 <motion.div id="dayTransactionsAndIncome">
+                    <motion.div id="dayChartsAndTransactionsDiv" >
+                        <DayTransactionChart/>
+                        <Transactions transactions={transactionData}/>
+                    </motion.div>
+                    <motion.div id="bigScreenTransaction">
+                        <Transactions transactions={transactionData}/>
+                        <IncomeUsage value={42} />
+                    </motion.div>
+                    <IncomeUsage value={42} />
+                </motion.div>   
                  <UnexpectedIncomeTrend/>
-                 <UnexpectedExpensesTrend/>
-                 <IncomeUsage value={42} />
           </div>
-}
-
-function Menu(){
-    return <motion.div>
-
-    </motion.div>
 }
 
 function FirstLevelData(){
@@ -57,10 +60,8 @@ function SingleFirstLevelData({Icon,label,amount}){
 function OverViewComponent(){
     const tempData = [{name:"Expenses", total1:500000,total2:45786},{name:"Income", total1:712000,total2:823940}]
 
-
-
-
     return <motion.div id="overViewComponentDiv" >
+            <motion.p>Overview</motion.p>
               <ResponsiveContainer aspect={2}  >
                 <AreaChart  data={tempData} >
                 <defs>
@@ -86,8 +87,10 @@ function OverViewComponent(){
 
 function DayTransactionChart(){
     const data = [{name:"day1", income:175000, expenses:23000 },{name:"day2",income:186000, expenses:29000}]
-    return <motion.div>
-                <BarChart  width={730} height={250} data={data} >
+    return <motion.div id="DayTransactionChartDiv" >
+            <motion.p>Performance</motion.p>
+              <ResponsiveContainer height={250}>
+                <BarChart data={data} >
                     <XAxis dataKey={"name"}/>
                     <YAxis/>
                     <Legend/>
@@ -95,51 +98,65 @@ function DayTransactionChart(){
                     <Bar dataKey="income" fill="#8884d8" />
                     <Bar dataKey="expenses" fill="#82ca9d" />
                 </BarChart>
+              </ResponsiveContainer>
             </motion.div>
 }
 
 function Transactions({transactions}){
-    return <motion.div>
+    return <motion.div id="transactionsDiv" >
+                <motion.p id="label">Transactions</motion.p>
               {!!transactions.length &&  transactions.map(function(transaction){
                     if (transaction.type === constants.INCOME) {
-                        return <Income description={transaction.description} amount={transaction.amount} />
+                        return <Income description={transaction.description} amount={transaction.amount} percentage={transaction.percentage} />
                     }else if (transaction.type === constants.EXPENSES) {
-                        return <Expenses description={transaction.description} amount={transaction.amount}  />
+                        return <Expenses description={transaction.description} amount={transaction.amount} percentage={transaction.percentage} />
                     }
                     return
                 })}
+           </motion.div>
+}
+
+function Expenses({description,amount, percentage}){
+    return <motion.div id="transactionExpenses" >
+        <motion.div id="textData">
+            <motion.p id="description">{description}</motion.p>
+            <motion.p id="amount">{amount}</motion.p>
+        </motion.div>
+        <motion.div id="progressbarDiv" >
+            <LinearProgress variant="determinate" value={percentage} />
+        </motion.div>
+
     </motion.div>
 }
 
-function Expenses({description,amount}){
-    return <motion.div>
-        <motion.p>{description}</motion.p>
-        <LinearProgress variant="determinate" value={amount} />
-        <motion.p>{amount}</motion.p>
-    </motion.div>
-}
-
-function Income({description,amount}){
-    return <motion.div>
-                <motion.p>{description}</motion.p>
-                    <LinearProgress variant="determinate" value={amount} />
-                <motion.p>{amount}</motion.p>
+function Income({description,amount, percentage}){
+    return <motion.div id="transactionIncome">
+                <motion.div id="textData">
+                    <motion.p id="description">{description}</motion.p>
+                    <motion.p id="amount">{amount}</motion.p>
+                </motion.div>
+                <motion.div id="progressbarDiv" >
+                    <LinearProgress variant="determinate" value={percentage} />
+                </motion.div>
     </motion.div>
 }
 
 function Expectations(){
     return <motion.div id="expectationsDiv">
-                <ExpectedIncome/>
-                <ExpectedExpenses/>
+                <motion.p>Target</motion.p>
+                <motion.div>
+                    <ExpectedIncome/>
+                    <ExpectedExpenses/>
+                </motion.div>
     </motion.div>
 }
 
 function ExpectedIncome(){
     const data = [{name:"rand", value:34}]
     return <motion.div className="subExpectation">
-            <ResponsiveContainer aspect={1}>
+            <ResponsiveContainer height={300}>
                 <PieChart >
-                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} fill="#8884d8" />
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} fill="#8884d8" label />
                     <Tooltip/>
                     <Legend/>
                 </PieChart>
@@ -150,9 +167,9 @@ function ExpectedIncome(){
 function ExpectedExpenses(){
     const data = [{name:"rando", value:67000},{name:"yam",value:48000}]
     return <motion.div className="subExpectation" >
-            <ResponsiveContainer aspect={2}>
+            <ResponsiveContainer height={300}>
                 <PieChart >
-                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%"  innerRadius={60} fill="#8884d8" />
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%"  innerRadius={40} fill="#15bab3" label />
                     <Tooltip/>
                     <Legend/>
                 </PieChart>
@@ -162,33 +179,29 @@ function ExpectedExpenses(){
 
 function UnexpectedIncomeTrend(){
     const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
-    return <motion.div>
-                <LineChart width={600} height={300} data={data} >
+    return <motion.div id="unexpectedTrends">
+                <motion.p>
+                    Miscellanous Trends
+                </motion.p>
+                <ResponsiveContainer height={300}>
+                <LineChart data={data} >
                     <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                     <Line type="monotone" dataKey="pv" stroke="#15bab3" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip/>
                 </LineChart>
+                </ResponsiveContainer>
     </motion.div>
 }
 
-function UnexpectedExpensesTrend(){
-    const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
-    return <motion.div>
-                <LineChart width={600} height={300} data={data} >
-                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="pv" stroke="#15bab3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip/>
-                </LineChart>
-    </motion.div>
-}
 
 function IncomeUsage({value}){
-            return <motion.div>
-                        <CircularProgress variant="determinate" value={value} />
-                        <motion.p>{value}%</motion.p>
+            return <motion.div id="incomeUsage">
+                        <motion.p id="label">Income Usage</motion.p>
+                        <motion.div>
+                            <CircularProgress variant="determinate" value={value} sx={{color:"cyan"}} style={{width:"70%",height:"70%", }} />
+                            <motion.p>{value}%</motion.p>
+                        </motion.div>
             </motion.div>
 }

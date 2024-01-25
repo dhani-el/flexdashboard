@@ -1,5 +1,12 @@
 
 $label-color :grey;
+$background-color:rgb(35, 35, 37);
+$primary-text-color:white;
+$default-paddng:1rem;
+$card-background-color:black;
+$icon-color:rgb(6, 238, 6);
+$icon-background-color:rgb(35, 35, 35);
+$default-border-radius:1rem;
 
 *{
     padding: 0px;
@@ -8,34 +15,271 @@ $label-color :grey;
 }
 
 .container{
-    background-color: black;
+    background-color: $background-color;
 }
 
 #analyticsContainer{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color:$background-color;
+    color: $primary-text-color;
+    gap: 0.5rem;
+    padding: $default-paddng;
     #FirstLevelDataContainer{
         width: 100%;
+        display: flex;
+        gap: 5%;
+        overflow-x:scroll ;
+        flex-wrap: nowrap;
+        padding: $default-paddng;
+        padding-left: 0;
+        #SingleFirstLevelDataContainer{
+            padding: $default-paddng;
+            border-radius: 0.5rem ;
+            background-color: $card-background-color;
+            display: flex;
+            align-items: center;
+            .icon{
+                color: $icon-color;
+                background-color: $icon-background-color;
+                width: 1.5rem;
+                height: 1.5rem;
+                padding:0.4rem;
+                border-radius: 0.2rem;;
+            }
+            .details{
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding-left: 1rem;
+                .label{
+                    font-size: 0.5rem;
+                    color: $label-color;
+                }
+                .amount{
+                    font-size: 1.5rem;
+                }
+            }
+        }
     }
+    #overviewAndExpectationsDiv{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:1rem;
+        #overViewComponentDiv{
+            width: 100%;
+            height: 25%;
+            padding: $default-paddng;
+            padding-right: $default-paddng;
+            border-radius: $default-border-radius;
+            background-color: $card-background-color;
+            position: relative;
+            p{
+                padding: 0.5rem;
+                position: relative;
+                top:-1rem;
+                font-size: 1.5rem;
+            }
+        }
+        #expectationsDiv{
+            width: 100%;
+            padding: $default-paddng;
+            border-radius: $default-border-radius;
+            background-color:$card-background-color;
+            p{
+                padding: 0.5rem;
+                position: relative;
+                top:-1rem;
+                font-size: 1.5rem;
+            }
+            div{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                .subExpectation{
+                    width: 45%;
+                    height:98%;
+                }
+            }
+        }
+    }
+    #dayTransactionsAndIncome{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        #dayChartsAndTransactionsDiv{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+            #DayTransactionChartDiv{
+                width: 100%;
+                background-color: black;
+                padding: calc($default-paddng * 2);
+                border-radius: $default-border-radius;
+                p{
+                    padding:calc($default-paddng / 2);
+                    position: relative;
+                    top:-1rem;
+                    font-size: 1rem;
+                }
+            }
+            #transactionsDiv{
+                width: 100%;
+                border-radius: 1rem;
+                background-color: black;
+                padding: 2rem;
+                min-height: 40vh;
+                overflow-y: scroll;
+                #label{
+                    padding: 0.5rem;
+                    position: relative;
+                    top:-1rem;
+                    font-size: 1.5rem;
+                }
+                #transactionExpenses,#transactionIncome{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1rem 0;
+                    #textData{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+                
+            }
+        }
+        #bigScreenTransaction{
+            display: none;
+        }
+        #incomeUsage{
+            width: 100%;
+            border-radius: $default-border-radius;
+            padding: calc($default-paddng * 2);
+            background-color: $card-background-color;
+            align-self: stretch;
+            div{
+                width: 100%;
+                display:flex ;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                p{
+                    position: absolute;
+                    font-size: 3rem;
+                }
+            }
+            #label{
+                padding: 0.5rem;
+                position: relative;
+                top:-1rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+    #unexpectedTrends{
+        width: 100%;
+        padding: 0.5rem;
+        padding-right: $default-paddng;
+        padding-top: $default-paddng;
+        border-radius: $default-border-radius;
+        background-color: $card-background-color;
+        p{
+            padding: 0.5rem;
+            position: relative;
+            top:-1rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (orientation:"portrait") and (min-width:700px){
+#transactionsDiv{
+    display: none;
+}
+#analyticsContainer{
+    #dayTransactionsAndIncome{
+        #bigScreenTransaction{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            #incomeUsage{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 48%;
+                position: relative;
+                #label{
+                    padding: $default-paddng;
+                    position: absolute;
+                    top:0;
+                    font-size: 1.5rem;
+                    align-self: self-start;
+                }
+            }
+            #transactionsDiv{
+                display: flex;
+                width: 48%;
+                flex-direction: column;
+                border-radius: $default-border-radius;
+                background-color: $card-background-color;
+                padding: calc($default-paddng * 2);
+                min-height: 40vh;
+                overflow-x: scroll;
+                #label{
+                    padding: 0.5rem;
+                    position: relative;
+                    top:-1rem;
+                    font-size: 1.5rem;
+                }
+                #transactionExpenses,#transactionIncome{
+                    display: flex;
+                    flex-direction: column;
+                    padding: $default-paddng 0;
+                    #textData{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+        #incomeUsage{
+            display: none;
+        }
+    }
+}
 }
 
 @media (orientation:"landscape"){
     #analyticsContainer{
-        background-color: rgb(35, 35, 37);
-        color: white;
+        gap: 0;
         #FirstLevelDataContainer{
-            display: flex;
-            justify-content: space-around;
+            width: 100%;
             padding: 1.5rem;
+            padding-left: 1.5rem;
+            justify-content: space-around;
+            overflow-x: hidden;
             #SingleFirstLevelDataContainer{
                 width: 18%;
-                padding: 1rem;
+                padding: $default-paddng;
                 border-radius: 0.5rem ;
-                background-color: rgb(23, 20, 20);
+                background-color: $card-background-color;
                 display: flex;
                 align-items: center;
                 .icon{
-                    color: rgb(6, 238, 6);
+                    color: $icon-color;
                     background-color: rgb(35, 35, 35);
                     width: fit-content;
                     height: fit-content;
@@ -46,13 +290,13 @@ $label-color :grey;
                     display: flex;
                     flex-direction: column;
                     gap: 0.5rem;
-                    padding-left: 1rem;
+                    padding-left: $default-paddng;
                     .label{
-                        font-size: x-small;
+                        font-size: 0.8rem;
                         color: $label-color;
                     }
                     .amount{
-                        font-size: xx-large;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -60,23 +304,92 @@ $label-color :grey;
         #overviewAndExpectationsDiv{
             width: 100%;
             height: 25%;
-            padding-left: 2rem;
+            padding-left: calc($default-paddng * 2);
             display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 0;
+            flex-direction: row;
             #overViewComponentDiv{
-                width: 65%;
+                width: 60%;
                 height: 25%;
-                padding-left: 2rem;
+                padding: calc($default-paddng * 2);
+                padding-right:  calc($default-paddng * 2);
+                border-radius: $default-border-radius;
+                background-color: $card-background-color;
             }
             #expectationsDiv{
                 width: 33%;
                 height: 25%;
-                padding-right: 2rem;
-                display: flex;
+                padding-right: calc($default-paddng * 2);
+                border-radius: $default-border-radius;
+                background-color: $card-background-color;
                 .subExpectation{
                     width: 45%;
                     height:98%;
                 }
             }
+        }
+        #dayTransactionsAndIncome{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: calc($default-paddng * 2);
+            justify-content: space-around;
+            align-items: center;
+            gap: 0;
+            #dayChartsAndTransactionsDiv{
+                width: 60%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 0;
+                #DayTransactionChartDiv{
+                    width: 45%;
+                    border: 1rem;
+                    background-color: black;
+                    padding: 2rem;
+                    border-radius: 1rem;
+                }
+                #transactionsDiv{
+                    width: 45%;
+                    border-radius: 1rem;
+                    background-color: black;
+                    padding: 2rem;
+                    #transactionExpenses,#transactionIncome{
+                        display: flex;
+                        flex-direction: column;
+                        padding: 1rem 0;
+                        #textData{
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+                    
+                }
+            }
+            #incomeUsage{
+                width: 33%;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                border-radius: $default-border-radius;
+                padding: calc($default-paddng * 2);
+                background-color: black;
+                align-self: stretch;
+                p{
+                    position: absolute;
+                    font-size: 3rem;
+                }
+            }
+        }
+        #unexpectedTrends{
+            width: 90%;
+            padding: calc($default-paddng * 2);
+            border-radius: $default-border-radius;
+            background-color: $card-background-color;
+            align-self: center;
         }
     }
 }

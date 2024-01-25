@@ -5,32 +5,263 @@
 }
 
 .container {
-  background-color: black;
+  background-color: rgb(35, 35, 37);
 }
 
 #analyticsContainer {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(35, 35, 37);
+  color: white;
+  gap: 0.5rem;
+  padding: 1rem;
 }
 #analyticsContainer #FirstLevelDataContainer {
   width: 100%;
+  display: flex;
+  gap: 5%;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  padding-left: 0;
+}
+#analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+#analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
+  color: rgb(6, 238, 6);
+  background-color: rgb(35, 35, 35);
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+}
+#analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1rem;
+}
+#analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details .label {
+  font-size: 0.5rem;
+  color: grey;
+}
+#analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details .amount {
+  font-size: 1.5rem;
+}
+#analyticsContainer #overviewAndExpectationsDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+#analyticsContainer #overviewAndExpectationsDiv #overViewComponentDiv {
+  width: 100%;
+  height: 25%;
+  padding: 1rem;
+  padding-right: 1rem;
+  border-radius: 1rem;
+  background-color: black;
+  position: relative;
+}
+#analyticsContainer #overviewAndExpectationsDiv #overViewComponentDiv p {
+  padding: 0.5rem;
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
+}
+#analyticsContainer #overviewAndExpectationsDiv #expectationsDiv {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: black;
+}
+#analyticsContainer #overviewAndExpectationsDiv #expectationsDiv p {
+  padding: 0.5rem;
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
+}
+#analyticsContainer #overviewAndExpectationsDiv #expectationsDiv div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#analyticsContainer #overviewAndExpectationsDiv #expectationsDiv div .subExpectation {
+  width: 45%;
+  height: 98%;
+}
+#analyticsContainer #dayTransactionsAndIncome {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #DayTransactionChartDiv {
+  width: 100%;
+  background-color: black;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #DayTransactionChartDiv p {
+  padding: 0.5rem;
+  position: relative;
+  top: -1rem;
+  font-size: 1rem;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv {
+  width: 100%;
+  border-radius: 1rem;
+  background-color: black;
+  padding: 2rem;
+  min-height: 40vh;
+  overflow-y: scroll;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #label {
+  padding: 0.5rem;
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses, #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #textData, #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #textData {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction {
+  display: none;
+}
+#analyticsContainer #dayTransactionsAndIncome #incomeUsage {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: black;
+  align-self: stretch;
+}
+#analyticsContainer #dayTransactionsAndIncome #incomeUsage div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#analyticsContainer #dayTransactionsAndIncome #incomeUsage div p {
+  position: absolute;
+  font-size: 3rem;
+}
+#analyticsContainer #dayTransactionsAndIncome #incomeUsage #label {
+  padding: 0.5rem;
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
+}
+#analyticsContainer #unexpectedTrends {
+  width: 100%;
+  padding: 0.5rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  border-radius: 1rem;
+  background-color: black;
+}
+#analyticsContainer #unexpectedTrends p {
+  padding: 0.5rem;
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
 }
 
+@media (orientation: portrait) and (min-width: 700px) {
+  #transactionsDiv {
+    display: none;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #incomeUsage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    position: relative;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #incomeUsage #label {
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    font-size: 1.5rem;
+    align-self: self-start;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv {
+    display: flex;
+    width: 48%;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: black;
+    padding: 2rem;
+    min-height: 40vh;
+    overflow-x: scroll;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #label {
+    padding: 0.5rem;
+    position: relative;
+    top: -1rem;
+    font-size: 1.5rem;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionExpenses, #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionIncome {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionExpenses #textData, #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionIncome #textData {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #incomeUsage {
+    display: none;
+  }
+}
 @media (orientation: landscape) {
   #analyticsContainer {
-    background-color: rgb(35, 35, 37);
-    color: white;
+    gap: 0;
   }
   #analyticsContainer #FirstLevelDataContainer {
-    display: flex;
-    justify-content: space-around;
+    width: 100%;
     padding: 1.5rem;
+    padding-left: 1.5rem;
+    justify-content: space-around;
+    overflow-x: hidden;
   }
   #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer {
     width: 18%;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: rgb(23, 20, 20);
+    background-color: black;
     display: flex;
     align-items: center;
   }
@@ -51,31 +282,99 @@
     padding-left: 1rem;
   }
   #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details .label {
-    font-size: x-small;
+    font-size: 0.8rem;
     color: grey;
   }
   #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details .amount {
-    font-size: xx-large;
+    font-size: 1.5rem;
   }
   #analyticsContainer #overviewAndExpectationsDiv {
     width: 100%;
     height: 25%;
     padding-left: 2rem;
     display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 0;
+    flex-direction: row;
   }
   #analyticsContainer #overviewAndExpectationsDiv #overViewComponentDiv {
-    width: 65%;
+    width: 60%;
     height: 25%;
-    padding-left: 2rem;
+    padding: 2rem;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    background-color: black;
   }
   #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv {
     width: 33%;
     height: 25%;
     padding-right: 2rem;
-    display: flex;
+    border-radius: 1rem;
+    background-color: black;
   }
   #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv .subExpectation {
     width: 45%;
     height: 98%;
+  }
+  #analyticsContainer #dayTransactionsAndIncome {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #DayTransactionChartDiv {
+    width: 45%;
+    border: 1rem;
+    background-color: black;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv {
+    width: 45%;
+    border-radius: 1rem;
+    background-color: black;
+    padding: 2rem;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses, #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #textData, #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #textData {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #incomeUsage {
+    width: 33%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: black;
+    align-self: stretch;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #incomeUsage p {
+    position: absolute;
+    font-size: 3rem;
+  }
+  #analyticsContainer #unexpectedTrends {
+    width: 90%;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: black;
+    align-self: center;
   }
 }/*# sourceMappingURL=index.css.map */
