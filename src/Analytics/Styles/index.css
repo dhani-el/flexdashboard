@@ -111,6 +111,7 @@
   background-color: black;
   padding: 2rem;
   min-height: 40vh;
+  overflow-y: scroll;
 }
 #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses, #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome {
   display: flex;
@@ -121,6 +122,9 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+#analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction {
+  display: none;
 }
 #analyticsContainer #dayTransactionsAndIncome #incomeUsage {
   width: 100%;
@@ -146,6 +150,43 @@
   background-color: black;
 }
 
+@media (orientation: portrait) and (min-width: 700px) {
+  #transactionsDiv {
+    display: none;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #incomeUsage {
+    display: flex;
+    width: 48%;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv {
+    display: flex;
+    width: 48%;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: black;
+    padding: 2rem;
+    min-height: 40vh;
+    overflow-x: scroll;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionExpenses, #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionIncome {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionExpenses #textData, #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionIncome #textData {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #incomeUsage {
+    display: none;
+  }
+}
 @media (orientation: landscape) {
   #analyticsContainer {
     gap: 0;

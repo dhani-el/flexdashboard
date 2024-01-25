@@ -24,6 +24,10 @@ export default function Analytics(){
                         <DayTransactionChart/>
                         <Transactions transactions={transactionData}/>
                     </motion.div>
+                    <motion.div id="bigScreenTransaction">
+                        <Transactions transactions={transactionData}/>
+                        <IncomeUsage value={42} />
+                    </motion.div>
                     <IncomeUsage value={42} />
                 </motion.div>   
                  <UnexpectedIncomeTrend/>

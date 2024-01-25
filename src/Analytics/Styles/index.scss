@@ -116,6 +116,7 @@ $label-color :grey;
                 background-color: black;
                 padding: 2rem;
                 min-height: 40vh;
+                overflow-y: scroll;
                 #transactionExpenses,#transactionIncome{
                     display: flex;
                     flex-direction: column;
@@ -128,6 +129,9 @@ $label-color :grey;
                 }
                 
             }
+        }
+        #bigScreenTransaction{
+            display: none;
         }
         #incomeUsage{
             width: 100%;
@@ -153,6 +157,48 @@ $label-color :grey;
         border-radius: 1rem;
         background-color: black;
     }
+}
+
+@media (orientation:"portrait") and (min-width:700px){
+#transactionsDiv{
+    display: none;
+}
+#analyticsContainer{
+    #dayTransactionsAndIncome{
+        #bigScreenTransaction{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            #incomeUsage{
+                display: flex;
+                width: 48%;
+            }
+            #transactionsDiv{
+                display: flex;
+                width: 48%;
+                flex-direction: column;
+                border-radius: 1rem;
+                background-color: black;
+                padding: 2rem;
+                min-height: 40vh;
+                overflow-x: scroll;
+                #transactionExpenses,#transactionIncome{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1rem 0;
+                    #textData{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+        #incomeUsage{
+            display: none;
+        }
+    }
+}
 }
 
 @media (orientation:"landscape"){
