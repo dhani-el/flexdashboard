@@ -60,10 +60,8 @@ function SingleFirstLevelData({Icon,label,amount}){
 function OverViewComponent(){
     const tempData = [{name:"Expenses", total1:500000,total2:45786},{name:"Income", total1:712000,total2:823940}]
 
-
-
-
     return <motion.div id="overViewComponentDiv" >
+            <motion.p>Overview</motion.p>
               <ResponsiveContainer aspect={2}  >
                 <AreaChart  data={tempData} >
                 <defs>
@@ -90,6 +88,7 @@ function OverViewComponent(){
 function DayTransactionChart(){
     const data = [{name:"day1", income:175000, expenses:23000 },{name:"day2",income:186000, expenses:29000}]
     return <motion.div id="DayTransactionChartDiv" >
+            <motion.p>Performance</motion.p>
               <ResponsiveContainer height={250}>
                 <BarChart data={data} >
                     <XAxis dataKey={"name"}/>
@@ -105,6 +104,7 @@ function DayTransactionChart(){
 
 function Transactions({transactions}){
     return <motion.div id="transactionsDiv" >
+                <motion.p id="label">Transactions</motion.p>
               {!!transactions.length &&  transactions.map(function(transaction){
                     if (transaction.type === constants.INCOME) {
                         return <Income description={transaction.description} amount={transaction.amount} percentage={transaction.percentage} />
@@ -143,8 +143,11 @@ function Income({description,amount, percentage}){
 
 function Expectations(){
     return <motion.div id="expectationsDiv">
-                <ExpectedIncome/>
-                <ExpectedExpenses/>
+                <motion.p>Target</motion.p>
+                <motion.div>
+                    <ExpectedIncome/>
+                    <ExpectedExpenses/>
+                </motion.div>
     </motion.div>
 }
 
@@ -177,6 +180,9 @@ function ExpectedExpenses(){
 function UnexpectedIncomeTrend(){
     const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
     return <motion.div id="unexpectedTrends">
+                <motion.p>
+                    Miscellanous Trends
+                </motion.p>
                 <ResponsiveContainer height={300}>
                 <LineChart data={data} >
                     <Line type="monotone" dataKey="uv" stroke="#8884d8" />
@@ -192,7 +198,10 @@ function UnexpectedIncomeTrend(){
 
 function IncomeUsage({value}){
             return <motion.div id="incomeUsage">
-                        <CircularProgress variant="determinate" value={value} sx={{color:"cyan"}} style={{width:"70%",height:"70%", }} />
-                        <motion.p>{value}%</motion.p>
+                        <motion.p id="label">Income Usage</motion.p>
+                        <motion.div>
+                            <CircularProgress variant="determinate" value={value} sx={{color:"cyan"}} style={{width:"70%",height:"70%", }} />
+                            <motion.p>{value}%</motion.p>
+                        </motion.div>
             </motion.div>
 }

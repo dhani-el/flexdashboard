@@ -48,24 +48,21 @@ $label-color :grey;
                 gap: 0.5rem;
                 padding-left: 1rem;
                 .label{
-                    font-size: xx-small;
+                    font-size: 0.5rem;
                     color: $label-color;
                 }
                 .amount{
-                    font-size: x-large;
+                    font-size: 1.5rem;
                 }
             }
         }
     }
     #overviewAndExpectationsDiv{
         width: 100%;
-        // height: 25%;
-        // padding-left: 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap:1rem;
-        // justify-content: space-around;
         #overViewComponentDiv{
             width: 100%;
             height: 25%;
@@ -73,19 +70,34 @@ $label-color :grey;
             padding-right: 1rem;
             border-radius: 1rem;
             background-color: rgb(23, 20, 20);
+            position: relative;
+            p{
+                padding: 0.5rem;
+                position: relative;
+                top:-1rem;
+                font-size: 1.5rem;
+            }
         }
         #expectationsDiv{
             width: 100%;
-            // height: 25%;
             padding: 1rem;
-            display: flex;
             border-radius: 1rem;
             background-color: rgb(23, 20, 20);
-            align-items: center;
-            justify-content:center;
-            .subExpectation{
-                width: 45%;
-                height:98%;
+            p{
+                padding: 0.5rem;
+                position: relative;
+                top:-1rem;
+                font-size: 1.5rem;
+            }
+            div{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                .subExpectation{
+                    width: 45%;
+                    height:98%;
+                }
             }
         }
     }
@@ -108,6 +120,12 @@ $label-color :grey;
                 background-color: black;
                 padding: 2rem;
                 border-radius: 1rem;
+                p{
+                    padding: 0.5rem;
+                    position: relative;
+                    top:-1rem;
+                    font-size: 1rem;
+                }
             }
             #transactionsDiv{
                 width: 100%;
@@ -116,6 +134,12 @@ $label-color :grey;
                 padding: 2rem;
                 min-height: 40vh;
                 overflow-y: scroll;
+                #label{
+                    padding: 0.5rem;
+                    position: relative;
+                    top:-1rem;
+                    font-size: 1.5rem;
+                }
                 #transactionExpenses,#transactionIncome{
                     display: flex;
                     flex-direction: column;
@@ -134,17 +158,26 @@ $label-color :grey;
         }
         #incomeUsage{
             width: 100%;
-            display:flex ;
-            align-items: center;
-            justify-content: center;
-            position: relative;
             border-radius: 1rem;
             padding: 2rem;
             background-color: black;
             align-self: stretch;
-            p{
-                position: absolute;
-                font-size: 3rem;
+            div{
+                width: 100%;
+                display:flex ;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                p{
+                    position: absolute;
+                    font-size: 3rem;
+                }
+            }
+            #label{
+                padding: 0.5rem;
+                position: relative;
+                top:-1rem;
+                font-size: 1.5rem;
             }
         }
     }
@@ -155,6 +188,12 @@ $label-color :grey;
         padding-top: 1rem;
         border-radius: 1rem;
         background-color: black;
+        p{
+            padding: 0.5rem;
+            position: relative;
+            top:-1rem;
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -170,7 +209,18 @@ $label-color :grey;
             justify-content: space-between;
             #incomeUsage{
                 display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 width: 48%;
+                position: relative;
+                #label{
+                    padding: 1rem;
+                    position: absolute;
+                    top:0;
+                    font-size: 1.5rem;
+                    align-self: self-start;
+                }
             }
             #transactionsDiv{
                 display: flex;
@@ -181,6 +231,12 @@ $label-color :grey;
                 padding: 2rem;
                 min-height: 40vh;
                 overflow-x: scroll;
+                #label{
+                    padding: 0.5rem;
+                    position: relative;
+                    top:-1rem;
+                    font-size: 1.5rem;
+                }
                 #transactionExpenses,#transactionIncome{
                     display: flex;
                     flex-direction: column;
@@ -230,11 +286,11 @@ $label-color :grey;
                     gap: 0.5rem;
                     padding-left: 1rem;
                     .label{
-                        font-size: x-small;
+                        font-size: 0.8rem;
                         color: $label-color;
                     }
                     .amount{
-                        font-size: xx-large;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -260,11 +316,8 @@ $label-color :grey;
                 width: 33%;
                 height: 25%;
                 padding-right: 2rem;
-                display: flex;
                 border-radius: 1rem;
                 background-color: rgb(23, 20, 20);
-                align-items: center;
-                justify-content:center;
                 .subExpectation{
                     width: 45%;
                     height:98%;
@@ -312,7 +365,6 @@ $label-color :grey;
             }
             #incomeUsage{
                 width: 33%;
-                display:flex ;
                 align-items: center;
                 justify-content: center;
                 position: relative;
