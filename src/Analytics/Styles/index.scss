@@ -8,10 +8,20 @@ $icon-color:rgb(6, 238, 6);
 $icon-background-color:rgb(35, 35, 35);
 $default-border-radius:1rem;
 
+@font-face {
+    font-family: montserrat;
+    src: url(../../font/montserrat.ttf);
+}
+@font-face {
+    font-family: bebas;
+    src: url(../../font/bebas.ttf);
+}
+
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'bebas';
 }
 
 .container{
