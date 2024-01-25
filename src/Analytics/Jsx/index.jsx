@@ -31,14 +31,7 @@ export default function Analytics(){
                     <IncomeUsage value={42} />
                 </motion.div>   
                  <UnexpectedIncomeTrend/>
-                 {/* <UnexpectedExpensesTrend/> */}
           </div>
-}
-
-function Menu(){
-    return <motion.div>
-
-    </motion.div>
 }
 
 function FirstLevelData(){
@@ -196,18 +189,6 @@ function UnexpectedIncomeTrend(){
     </motion.div>
 }
 
-function UnexpectedExpensesTrend(){
-    const data = [{name: 'Page A', uv: 400, pv: 200, amt: 2400},{name: 'Page B', uv: 300, pv: 300, amt: 3400},{name: 'Page C', uv: 600, pv: 230, amt: 3400},]
-    return <motion.div>
-                <LineChart width={600} height={300} data={data} >
-                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="pv" stroke="#15bab3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip/>
-                </LineChart>
-    </motion.div>
-}
 
 function IncomeUsage({value}){
             return <motion.div id="incomeUsage">
