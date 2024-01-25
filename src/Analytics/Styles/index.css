@@ -5,7 +5,7 @@
 }
 
 .container {
-  background-color: black;
+  background-color: rgb(35, 35, 37);
 }
 
 #analyticsContainer {
@@ -30,7 +30,7 @@
 #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer {
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: rgb(23, 20, 20);
+  background-color: black;
   display: flex;
   align-items: center;
 }
@@ -68,7 +68,7 @@
   padding: 1rem;
   padding-right: 1rem;
   border-radius: 1rem;
-  background-color: rgb(23, 20, 20);
+  background-color: black;
   position: relative;
 }
 #analyticsContainer #overviewAndExpectationsDiv #overViewComponentDiv p {
@@ -81,7 +81,7 @@
   width: 100%;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: rgb(23, 20, 20);
+  background-color: black;
 }
 #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv p {
   padding: 0.5rem;
@@ -116,7 +116,6 @@
 }
 #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #DayTransactionChartDiv {
   width: 100%;
-  border: 1rem;
   background-color: black;
   padding: 2rem;
   border-radius: 1rem;
@@ -262,7 +261,7 @@
     width: 18%;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: rgb(23, 20, 20);
+    background-color: black;
     display: flex;
     align-items: center;
   }
@@ -305,14 +304,14 @@
     padding: 2rem;
     padding-right: 2rem;
     border-radius: 1rem;
-    background-color: rgb(23, 20, 20);
+    background-color: black;
   }
   #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv {
     width: 33%;
     height: 25%;
     padding-right: 2rem;
     border-radius: 1rem;
-    background-color: rgb(23, 20, 20);
+    background-color: black;
   }
   #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv .subExpectation {
     width: 45%;
