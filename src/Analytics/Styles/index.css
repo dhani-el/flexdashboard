@@ -44,11 +44,9 @@
   align-items: center;
 }
 #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
-  color: rgb(6, 238, 6);
+  color: cyan;
   background-color: rgb(35, 35, 35);
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: 0.4rem;
+  padding: 0.2rem;
   border-radius: 0.2rem;
 }
 #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details {
@@ -311,7 +309,7 @@
     align-items: center;
   }
   #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
-    color: rgb(6, 238, 6);
+    color: cyan;
     background-color: rgb(35, 35, 35);
     width: -moz-fit-content;
     width: fit-content;

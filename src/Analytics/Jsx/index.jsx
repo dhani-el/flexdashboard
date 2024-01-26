@@ -79,12 +79,12 @@ function OverViewComponent({data,dataKeys}){
                 <AreaChart  data={data} >
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                        <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="darkcyan" stopOpacity={0.8}/>
+                        <stop offset="95%" stopColor="darkcyan" stopOpacity={0}/>
                     </linearGradient>
                     <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
-                        <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="cyan" stopOpacity={0.8}/>
+                        <stop offset="95%" stopColor="cyan" stopOpacity={0}/>
                     </linearGradient>
                 </defs>
                     <XAxis dataKey={dataKeys[0]}/>
@@ -107,8 +107,8 @@ function DayTransactionChart({data,dataKeys}){
                     <YAxis/>
                     <Legend/>
                     <Tooltip/>
-                    <Bar dataKey={dataKeys[1]} fill="#8884d8" />
-                    <Bar dataKey= {dataKeys[2]} fill="#82ca9d" />
+                    <Bar dataKey={dataKeys[1]} fill="darkcyan" />
+                    <Bar dataKey= {dataKeys[2]} fill="cyan" />
                 </BarChart>
               </ResponsiveContainer>
             </motion.div>
@@ -169,7 +169,7 @@ function ExpectedIncome({data,nameKey,dataKey}){
     return <motion.div className="subExpectation">
             <ResponsiveContainer height={300}>
                 <PieChart >
-                    <Pie data={data} dataKey={dataKey} nameKey={nameKey} cx="50%" cy="50%" innerRadius={40} fill="#15bab3" label />
+                    <Pie data={data} dataKey={dataKey} nameKey={nameKey} cx="50%" cy="50%" innerRadius={40} fill="darkcyan" label />
                     <Tooltip/>
                     <Legend/>
                 </PieChart>
@@ -181,7 +181,7 @@ function ExpectedExpenses({data,nameKey,dataKey}){
     return <motion.div className="subExpectation" >
             <ResponsiveContainer height={300}>
                 <PieChart >
-                    <Pie data={data} dataKey={dataKey} nameKey={nameKey} cx="50%" cy="50%" innerRadius={40} fill="#8884d8" label />
+                    <Pie data={data} dataKey={dataKey} nameKey={nameKey} cx="50%" cy="50%" innerRadius={40} fill="cyan" label />
                     <Tooltip/>
                     <Legend/>
                 </PieChart>
@@ -197,8 +197,8 @@ function UnexpectedIncomeTrend({data,dataKeys}){
                 </motion.p>
                 <ResponsiveContainer height={300}>
                 <LineChart data={data} >
-                    <Line type="monotone" dataKey={dataKeys[0]} stroke="#8884d8" />
-                    <Line type="monotone" dataKey={dataKeys[1]} stroke="#15bab3" />
+                    <Line type="monotone" dataKey={dataKeys[0]} stroke="cyan" />
+                    <Line type="monotone" dataKey={dataKeys[1]} stroke="darkcyan" />
                     <XAxis dataKey={dataKeys[2]} />
                     <YAxis />
                     <Tooltip/>
@@ -216,3 +216,5 @@ function IncomeUsage({value}){
                         </motion.div>
             </motion.div>
 }
+
+
