@@ -11,6 +11,19 @@
   margin: 0px;
   box-sizing: border-box;
   font-family: "bebas";
+  scrollbar-width: 0px;
+}
+* ::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+* ::-moz-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+* ::-ms-scrollbar {
+  width: 0px;
+  height: 0px;
 }
 
 .container {
@@ -415,4 +428,11 @@
     background-color: black;
     align-self: center;
   }
+}
+.lightmode {
+  background-color: white;
+}
+.lightmode * {
+  background-color: whitesmoke;
+  color: black;
 }/*# sourceMappingURL=index.css.map */
