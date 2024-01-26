@@ -4,14 +4,34 @@ $background-color:rgb(35, 35, 37);
 $primary-text-color:white;
 $default-paddng:1rem;
 $card-background-color:black;
-$icon-color:rgb(6, 238, 6);
+$icon-color:cyan;
 $icon-background-color:rgb(35, 35, 35);
 $default-border-radius:1rem;
+
+// light version
+$light-label-color :grey;
+$light-background-color:white;
+$light-primary-text-color:black;
+$light-default-paddng:1rem;
+$light-card-background-color:whitesmoke;
+$light-icon-color:cyan;
+$light-icon-background-color:rgb(172, 172, 172);
+$light-default-border-radius:1rem;
+
+@font-face {
+    font-family: montserrat;
+    src: url(../../font/montserrat.ttf);
+}
+@font-face {
+    font-family: bebas;
+    src: url(../../font/bebas.ttf);
+}
 
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'bebas';
 }
 
 .container{
@@ -44,9 +64,7 @@ $default-border-radius:1rem;
             .icon{
                 color: $icon-color;
                 background-color: $icon-background-color;
-                width: 1.5rem;
-                height: 1.5rem;
-                padding:0.4rem;
+                padding:0.2rem;
                 border-radius: 0.2rem;;
             }
             .details{
@@ -123,7 +141,7 @@ $default-border-radius:1rem;
             gap: 1rem;
             #DayTransactionChartDiv{
                 width: 100%;
-                background-color: black;
+                background-color: $card-background-color;
                 padding: calc($default-paddng * 2);
                 border-radius: $default-border-radius;
                 p{
@@ -136,7 +154,7 @@ $default-border-radius:1rem;
             #transactionsDiv{
                 width: 100%;
                 border-radius: 1rem;
-                background-color: black;
+                background-color: $card-background-color;
                 padding: 2rem;
                 min-height: 40vh;
                 overflow-y: scroll;
@@ -156,7 +174,36 @@ $default-border-radius:1rem;
                         justify-content: space-between;
                     }
                 }
-                
+                #transactionIncome{
+                    #textData{
+                        #amount{
+                        color: green;
+                    }
+                    }
+                    #progressbarDiv{
+                        span{
+                            background-color: rgb(83, 120, 83);
+                            span{
+                                background-color: green;
+                            }
+                        }
+                    }
+                }
+                #transactionExpenses{
+                    #textData{
+                        #amount{
+                        color: red;
+                    }
+                    }
+                    #progressbarDiv{
+                        span{
+                            background-color: rgb(120, 83, 83);
+                            span{
+                                background-color: rgb(254, 1, 1);
+                            }
+                        }
+                    }
+                }
             }
         }
         #bigScreenTransaction{
@@ -253,6 +300,36 @@ $default-border-radius:1rem;
                         justify-content: space-between;
                     }
                 }
+                #transactionIncome{
+                    #textData{
+                        #amount{
+                        color: green;
+                    }
+                    }
+                    #progressbarDiv{
+                        span{
+                            background-color: rgb(83, 120, 83);
+                            span{
+                                background-color: green;
+                            }
+                        }
+                    }
+                }
+                #transactionExpenses{
+                    #textData{
+                        #amount{
+                        color: red;
+                    }
+                    }
+                    #progressbarDiv{
+                        span{
+                            background-color: rgb(120, 83, 83);
+                            span{
+                                background-color: rgb(254, 1, 1);
+                            }
+                        }
+                    }
+                }
             }
         }
         #incomeUsage{
@@ -280,7 +357,7 @@ $default-border-radius:1rem;
                 align-items: center;
                 .icon{
                     color: $icon-color;
-                    background-color: rgb(35, 35, 35);
+                    background-color: $icon-background-color;
                     width: fit-content;
                     height: fit-content;
                     padding:0.2rem;
@@ -304,7 +381,6 @@ $default-border-radius:1rem;
         #overviewAndExpectationsDiv{
             width: 100%;
             height: 25%;
-            padding-left: calc($default-paddng * 2);
             display: flex;
             justify-content: space-around;
             align-items: flex-start;
@@ -313,7 +389,6 @@ $default-border-radius:1rem;
             #overViewComponentDiv{
                 width: 60%;
                 height: 25%;
-                padding: calc($default-paddng * 2);
                 padding-right:  calc($default-paddng * 2);
                 border-radius: $default-border-radius;
                 background-color: $card-background-color;
@@ -334,7 +409,7 @@ $default-border-radius:1rem;
             width: 100%;
             display: flex;
             flex-direction: row;
-            padding: 2rem;
+            padding: 2rem 0;
             justify-content: space-around;
             align-items: center;
             gap: 0;
@@ -345,14 +420,12 @@ $default-border-radius:1rem;
                 justify-content: space-between;
                 gap: 0;
                 #DayTransactionChartDiv{
-                    width: 45%;
-                    border: 1rem;
+                    width: 63%;
                     background-color: $card-background-color;
-                    padding: 2rem;
                     border-radius: 1rem;
                 }
                 #transactionsDiv{
-                    width: 45%;
+                    width: 35%;
                     border-radius: 1rem;
                     background-color: $card-background-color;
                     padding: 2rem;
@@ -385,8 +458,7 @@ $default-border-radius:1rem;
             }
         }
         #unexpectedTrends{
-            width: 90%;
-            padding: 2rem;
+            width: 98%;
             border-radius: 1rem;
             background-color: $card-background-color;
             align-self: center;

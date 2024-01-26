@@ -1,7 +1,16 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../../font/montserrat.ttf);
+}
+@font-face {
+  font-family: bebas;
+  src: url(../../font/bebas.ttf);
+}
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: "bebas";
 }
 
 .container {
@@ -35,11 +44,9 @@
   align-items: center;
 }
 #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
-  color: rgb(6, 238, 6);
+  color: cyan;
   background-color: rgb(35, 35, 35);
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: 0.4rem;
+  padding: 0.2rem;
   border-radius: 0.2rem;
 }
 #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details {
@@ -150,6 +157,24 @@
   display: flex;
   justify-content: space-between;
 }
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #textData #amount {
+  color: green;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #progressbarDiv span {
+  background-color: rgb(83, 120, 83);
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #progressbarDiv span span {
+  background-color: green;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #textData #amount {
+  color: red;
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #progressbarDiv span {
+  background-color: rgb(120, 83, 83);
+}
+#analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #progressbarDiv span span {
+  background-color: rgb(254, 1, 1);
+}
 #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction {
   display: none;
 }
@@ -242,6 +267,24 @@
     display: flex;
     justify-content: space-between;
   }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionIncome #textData #amount {
+    color: green;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionIncome #progressbarDiv span {
+    background-color: rgb(83, 120, 83);
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionIncome #progressbarDiv span span {
+    background-color: green;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionExpenses #textData #amount {
+    color: red;
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionExpenses #progressbarDiv span {
+    background-color: rgb(120, 83, 83);
+  }
+  #analyticsContainer #dayTransactionsAndIncome #bigScreenTransaction #transactionsDiv #transactionExpenses #progressbarDiv span span {
+    background-color: rgb(254, 1, 1);
+  }
   #analyticsContainer #dayTransactionsAndIncome #incomeUsage {
     display: none;
   }
@@ -266,7 +309,7 @@
     align-items: center;
   }
   #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
-    color: rgb(6, 238, 6);
+    color: cyan;
     background-color: rgb(35, 35, 35);
     width: -moz-fit-content;
     width: fit-content;
@@ -291,7 +334,6 @@
   #analyticsContainer #overviewAndExpectationsDiv {
     width: 100%;
     height: 25%;
-    padding-left: 2rem;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -301,7 +343,6 @@
   #analyticsContainer #overviewAndExpectationsDiv #overViewComponentDiv {
     width: 60%;
     height: 25%;
-    padding: 2rem;
     padding-right: 2rem;
     border-radius: 1rem;
     background-color: black;
@@ -321,7 +362,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding: 2rem;
+    padding: 2rem 0;
     justify-content: space-around;
     align-items: center;
     gap: 0;
@@ -334,14 +375,12 @@
     gap: 0;
   }
   #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #DayTransactionChartDiv {
-    width: 45%;
-    border: 1rem;
+    width: 63%;
     background-color: black;
-    padding: 2rem;
     border-radius: 1rem;
   }
   #analyticsContainer #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv {
-    width: 45%;
+    width: 35%;
     border-radius: 1rem;
     background-color: black;
     padding: 2rem;
@@ -371,8 +410,7 @@
     font-size: 3rem;
   }
   #analyticsContainer #unexpectedTrends {
-    width: 90%;
-    padding: 2rem;
+    width: 98%;
     border-radius: 1rem;
     background-color: black;
     align-self: center;
