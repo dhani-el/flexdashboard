@@ -9,6 +9,19 @@
   position: relative;
 }
 
+#pageContent {
+  width: 100%;
+  height: 100%;
+}
+
+#navigationCompContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 #navigationContainer {
   display: flex;
   justify-content: space-around;
@@ -23,4 +36,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (orientation: landscape) and (min-width: 700px) {
+  .container {
+    flex-direction: row-reverse;
+    height: 100%;
+    overflow: scroll;
+    align-items: flex-start;
+    gap: 2%;
+  }
+  #navigationCompContainer {
+    width: 5%;
+    height: 100%;
+    position: relative;
+  }
+  #navigationCompContainer #navigationContainer {
+    position: fixed;
+    top: 5%;
+    left: 1rem;
+    flex-direction: column-reverse;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 90%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+  }
 }/*# sourceMappingURL=index.css.map */
