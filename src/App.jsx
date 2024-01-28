@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Analytics from "./Analytics/Jsx";
-import Navigation from "./Navigation/jsx";
 
+import MainContainer from "./Main";
 const App = () => (
-  <div className="container">
-    <Navigation/>
-    <Analytics/>
+  <div >
+    <MainContainer/>
   </div>);
 ReactDOM.render(<App />, document.getElementById("app"));

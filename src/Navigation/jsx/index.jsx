@@ -12,11 +12,7 @@ export default function Navigation({navToFunc}){
         navToFunc((init)=>to)
     }
 
-    return <motion.div>
-                <motion.p>home</motion.p>
-                <motion.p>entry</motion.p>
-                <motion.p>analytics</motion.p>
-                <motion.p>theme</motion.p>
+    return <motion.div id = "navigationContainer">
                 <NavItem  handleClickFunc={handleNavClick}  Description={navConstants.HOME}  Icon={Home}  />
                 <NavItem  handleClickFunc={handleNavClick}  Description={navConstants.RECORD}  Icon={Home}  />
                 <NavItem  handleClickFunc={handleNavClick}  Description={navConstants.ANALYTICS}  Icon={Home}  />
@@ -24,13 +20,12 @@ export default function Navigation({navToFunc}){
             </motion.div>
 }
 
-
 // todo 2
 // in need of optimzation due to function being passed in
 
 function NavItem({handleClickFunc,Description,Icon}){
-    return <motion.div onClick={()=>handleClickFunc(Description)}>
-                <motion.span>{Description}</motion.span>
+    return <motion.div className = "navItem" onClick={()=>handleClickFunc(Description)}>
                 <motion.span><Icon/></motion.span>
+                <motion.span>{Description}</motion.span>
             </motion.div>
 }
