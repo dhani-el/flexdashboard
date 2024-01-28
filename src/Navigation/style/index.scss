@@ -1,2 +1,32 @@
 
+$default-color : white;
+$default-border-radius:1rem;
+$small-padding : 1rem;
+$background-color : rgb(34, 34, 34);
 
+*{
+    color: $default-color;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#navigationContainer{
+    display: flex;
+    justify-content: space-around;
+    padding: $small-padding;
+    width: 85%;
+    border-radius: $default-border-radius;
+    background-color: $background-color;
+    position: fixed;
+    bottom: 1rem;
+    .navItem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
