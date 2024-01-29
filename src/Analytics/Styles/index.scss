@@ -45,9 +45,9 @@ $light-icon-background-color:rgb(172, 172, 172);
     }
 }
 
-.container{
-    background-color: $background-color;
-}
+// .container{
+//     // background-color: $background-color;
+// }
 
 
 #analyticsContainer{
@@ -233,9 +233,13 @@ $light-icon-background-color:rgb(172, 172, 172);
                 align-items: center;
                 justify-content: center;
                 position: relative;
+                *{
+                    color: cyan;
+                }
                 p{
                     position: absolute;
                     font-size: 3rem;
+                    color: $primary-text-color;
                 }
             }
             #label{
@@ -259,6 +263,107 @@ $light-icon-background-color:rgb(172, 172, 172);
             top:-1rem;
             font-size: 1.5rem;
         }
+    }
+}
+
+#analyticsContainer.light{
+    background-color:$light-background-color;
+    padding: $default-paddng;
+    p{
+        color: $light-primary-text-color;
+    }
+    #FirstLevelDataContainer{
+        padding: $default-paddng;
+        #SingleFirstLevelDataContainer{
+            padding: $default-paddng;
+            background-color: $light-card-background-color;
+            .icon{
+                color: $light-icon-color;
+                background-color: $light-icon-background-color;
+            }
+            .details{
+                .label{
+                    color: $light-label-color;
+                }
+            }
+        }
+    }
+    #overviewAndExpectationsDiv{
+        #overViewComponentDiv{
+            padding: $default-paddng;
+            padding-right: $default-paddng;
+            border-radius: $default-border-radius;
+            background-color: $light-card-background-color;
+
+        }
+        #expectationsDiv{
+            width: 100%;
+            padding: $default-paddng;
+            border-radius: $default-border-radius;
+            background-color:$light-card-background-color;
+        }
+    }
+    #dayTransactionsAndIncome{
+        #dayChartsAndTransactionsDiv{
+            #DayTransactionChartDiv{
+                background-color: $light-card-background-color;
+                padding: calc($default-paddng * 2);
+                border-radius: $default-border-radius;
+                p{
+                    padding:calc($default-paddng / 2);
+                }
+            }
+            #transactionsDiv{
+                background-color: $light-card-background-color;
+                #transactionIncome{
+                    #textData{
+                        #amount{
+                            color: green;
+                    }
+                    }
+                    #progressbarDiv{
+                        span{
+                            background-color: rgb(83, 120, 83);
+                            span{
+                                background-color: green;
+                            }
+                        }
+                    }
+                }
+                #transactionExpenses{
+                    #textData{
+                        #amount{
+                        color: red;
+                    }
+                    }
+                    #progressbarDiv{
+                        span{
+                            background-color: rgb(120, 83, 83);
+                            span{
+                                background-color: rgb(254, 1, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #incomeUsage{
+            border-radius: $default-border-radius;
+            padding: calc($default-paddng * 2);
+            background-color: $light-card-background-color;
+            div{
+                p{
+                    color: $light-primary-text-color;
+                }
+            }
+        }
+    }
+    #unexpectedTrends{
+        padding-right: $default-paddng;
+        padding-top: $default-paddng;
+        border-radius: $default-border-radius;
+        background-color: $light-card-background-color;
+
     }
 }
 
