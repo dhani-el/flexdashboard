@@ -293,7 +293,6 @@ $light-icon-background-color:rgb(172, 172, 172);
 
         }
         #expectationsDiv{
-            width: 100%;
             padding: $default-paddng;
             border-radius: $default-border-radius;
             background-color:$light-card-background-color;
@@ -506,7 +505,7 @@ $light-icon-background-color:rgb(172, 172, 172);
                 border-radius: $default-border-radius;
                 background-color: $card-background-color;
             }
-            #expectationsDiv{
+            div#expectationsDiv{
                 width: 33%;
                 height: 25%;
                 padding-right: calc($default-paddng * 2);

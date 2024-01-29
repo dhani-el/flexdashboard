@@ -258,7 +258,6 @@
   background-color: whitesmoke;
 }
 #analyticsContainer.light #overviewAndExpectationsDiv #expectationsDiv {
-  width: 100%;
   padding: 1rem;
   border-radius: 1rem;
   background-color: whitesmoke;
@@ -437,14 +436,14 @@
     border-radius: 1rem;
     background-color: black;
   }
-  #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv {
+  #analyticsContainer #overviewAndExpectationsDiv div#expectationsDiv {
     width: 33%;
     height: 25%;
     padding-right: 2rem;
     border-radius: 1rem;
     background-color: black;
   }
-  #analyticsContainer #overviewAndExpectationsDiv #expectationsDiv .subExpectation {
+  #analyticsContainer #overviewAndExpectationsDiv div#expectationsDiv .subExpectation {
     width: 45%;
     height: 98%;
   }

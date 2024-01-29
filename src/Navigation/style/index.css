@@ -76,7 +76,7 @@
     position: fixed;
     top: 5%;
     left: 1rem;
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: -moz-fit-content;
     width: fit-content;
     height: 90%;
