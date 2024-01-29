@@ -37,6 +37,27 @@
   flex-direction: column;
   align-items: center;
 }
+#navigationContainer #themeSliderDiv {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#navigationContainer #themeSliderDiv #themeSliderSpan {
+  display: flex;
+  align-items: center;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: whitesmoke;
+}
+#navigationContainer #themeSliderDiv #themeSliderSpan div {
+  background-color: black;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.75rem;
+}
 
 @media (orientation: landscape) and (min-width: 700px) {
   .container {

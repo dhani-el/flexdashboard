@@ -7,13 +7,14 @@ import "../styles/main.css";
 
 export default function MainContainer(){
     const [page, setPage] = useState(navConstants.HOME)
+    const [darkMode, setDarkMode] = useState(false);
     
     return (<motion.div className="container">
                 <motion.div id="pageContent" >
-                    {page === navConstants.ANALYTICS && <Analytics/> }
+                    {page === navConstants.ANALYTICS && <Analytics theme={darkMode} /> }
                 </motion.div>
                 <motion.div id="navigationCompContainer">
-                    <Navigation navToFunc={setPage}/>
+                    <Navigation navToFunc={setPage} setTheme={setDarkMode} />
                 </motion.div>
             </motion.div>)
 }
