@@ -10,7 +10,7 @@ const constants = {
     EXPENSES:"EXPENSES",
 }
 
-export default function Analytics(){
+export default function Analytics({theme}){
     const transactionData = [{type:constants.EXPENSES,description:"Shawarma",percentage:45, amount:1500},{type:constants.INCOME,description:"Daily Bonus",percentage:32, amount:4500},{type:constants.EXPENSES,description:"Transport",percentage:21, amount:600}]
     const firstLevelDataSet = {fixedIncome:"170,000",fixedExpenses:"92,400",miscIncome:"12,500",miscExpenses:"9,750",balance:"80,150"}
     const overViewData = [{name:"Expenses", total1:500000,total2:45786},{name:"Income", total1:712000,total2:823940}]
@@ -27,7 +27,7 @@ export default function Analytics(){
     const expDataKey = "value"
     const expNameKey = "name"
 
-    return <div id = "analyticsContainer">
+    return <div id = "analyticsContainer" className={theme ? "" : "light"}>
                  <FirstLevelData amounts={firstLevelDataSet}/>
                  <motion.div id="overviewAndExpectationsDiv">
                     <OverViewComponent data={overViewData} dataKeys={overviewDataKeys}/>
