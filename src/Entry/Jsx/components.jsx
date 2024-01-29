@@ -1,6 +1,6 @@
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { motion } from "framer-motion";
-
+import { EntryConst } from "../../constants";
 
 
 export function ARecord({Description,onClick}){
@@ -10,8 +10,11 @@ export function ARecord({Description,onClick}){
 }
 
 export function RecordDialouge({variant}){
+
         return <motion.div>
                     <motion.p>{variant}</motion.p>
-                    <TextField  />
+                    <TextField placeholder= {(variant === EntryConst.FIXEDEXPENSES || variant === EntryConst.FIXEDINCOME  ) ? "NEW AMOUNT" : "COST"} />
+                    <TextField placeholder="NAME OF EXPENSE" sx={{display:((variant === EntryConst.FIXEDEXPENSES || variant === EntryConst.FIXEDINCOME  ) ? "hidden" : "block")}} />
+                    <Button>RECORD</Button>
                 </motion.div>
 }
