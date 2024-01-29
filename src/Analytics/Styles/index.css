@@ -26,10 +26,6 @@
   height: 0px;
 }
 
-.container {
-  background-color: rgb(35, 35, 37);
-}
-
 #analyticsContainer {
   width: 100%;
   height: 100%;
@@ -205,9 +201,13 @@
   justify-content: center;
   position: relative;
 }
+#analyticsContainer #dayTransactionsAndIncome #incomeUsage div * {
+  color: cyan;
+}
 #analyticsContainer #dayTransactionsAndIncome #incomeUsage div p {
   position: absolute;
   font-size: 3rem;
+  color: white;
 }
 #analyticsContainer #dayTransactionsAndIncome #incomeUsage #label {
   padding: 0.5rem;
@@ -228,6 +228,83 @@
   position: relative;
   top: -1rem;
   font-size: 1.5rem;
+}
+
+#analyticsContainer.light {
+  background-color: white;
+  padding: 1rem;
+}
+#analyticsContainer.light p {
+  color: black;
+}
+#analyticsContainer.light #FirstLevelDataContainer {
+  padding: 1rem;
+}
+#analyticsContainer.light #FirstLevelDataContainer #SingleFirstLevelDataContainer {
+  padding: 1rem;
+  background-color: whitesmoke;
+}
+#analyticsContainer.light #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
+  color: cyan;
+  background-color: rgb(172, 172, 172);
+}
+#analyticsContainer.light #FirstLevelDataContainer #SingleFirstLevelDataContainer .details .label {
+  color: grey;
+}
+#analyticsContainer.light #overviewAndExpectationsDiv #overViewComponentDiv {
+  padding: 1rem;
+  padding-right: 1rem;
+  border-radius: 1rem;
+  background-color: whitesmoke;
+}
+#analyticsContainer.light #overviewAndExpectationsDiv #expectationsDiv {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: whitesmoke;
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #DayTransactionChartDiv {
+  background-color: whitesmoke;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #DayTransactionChartDiv p {
+  padding: 0.5rem;
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv {
+  background-color: whitesmoke;
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #textData #amount {
+  color: green;
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #progressbarDiv span {
+  background-color: rgb(83, 120, 83);
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionIncome #progressbarDiv span span {
+  background-color: green;
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #textData #amount {
+  color: red;
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #progressbarDiv span {
+  background-color: rgb(120, 83, 83);
+}
+#analyticsContainer.light #dayTransactionsAndIncome #dayChartsAndTransactionsDiv #transactionsDiv #transactionExpenses #progressbarDiv span span {
+  background-color: rgb(254, 1, 1);
+}
+#analyticsContainer.light #dayTransactionsAndIncome #incomeUsage {
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: whitesmoke;
+}
+#analyticsContainer.light #dayTransactionsAndIncome #incomeUsage div p {
+  color: black;
+}
+#analyticsContainer.light #unexpectedTrends {
+  padding-right: 1rem;
+  padding-top: 1rem;
+  border-radius: 1rem;
+  background-color: whitesmoke;
 }
 
 @media (orientation: portrait) and (min-width: 700px) {
