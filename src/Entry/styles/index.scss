@@ -1,0 +1,51 @@
+
+$default-font-color:black;
+$default-padding:1rem;
+$default-card-background-color:whitesmoke;
+$default-border-radius:1rem;
+$default-font-size:1.5rem;
+
+
+#entryDiv{
+    display: flex;
+    width: 100%;
+    height:100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    p{
+        color: $default-font-color;
+    }
+
+    #recordsContainer{
+        width: 100%;
+        min-height: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        padding: $default-padding;
+        #arecord{
+            width: 40vw;
+            background-color: $default-card-background-color ;
+            border-radius: $default-border-radius;
+            padding: $default-padding;
+            font-size: $default-font-size;
+            text-align: center;
+            #arrowDiv{
+                svg{
+                    color: black;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    path{
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    #recordDialouge{
+        position: absolute;
+    }
+}
