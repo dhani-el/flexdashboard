@@ -12,12 +12,12 @@ export default function Entry(){
         setShowRecordDiag(init=>!init);
         setRecordDiag(init => recordType )
     }
-    return <motion.div>
-                <motion.div>
-                    <ARecord Description={EntryConst.MISCELLANEOUSEXPENSES}  onClick={handleRecordClick(EntryConst.MISCELLANEOUSEXPENSES)}  />
-                    <ARecord Description={EntryConst.MISCELLANEOUSINCOME}  onClick={handleRecordClick(EntryConst.MISCELLANEOUSINCOME)}  />
-                    <ARecord Description={EntryConst.FIXEDEXPENSES}  onClick={handleRecordClick(EntryConst.FIXEDEXPENSES)}  />
-                    <ARecord Description={EntryConst.FIXEDINCOME}  onClick={handleRecordClick(EntryConst.FIXEDINCOME)}  />
+    return <motion.div id="entryDiv" >
+                <motion.div id="recordsContainer" >
+                    <ARecord Description={EntryConst.MISCELLANEOUSEXPENSES}  onClick={()=>handleRecordClick(EntryConst.MISCELLANEOUSEXPENSES)}  />
+                    <ARecord Description={EntryConst.MISCELLANEOUSINCOME}  onClick={()=>handleRecordClick(EntryConst.MISCELLANEOUSINCOME)}  />
+                    <ARecord Description={EntryConst.FIXEDEXPENSES}  onClick={()=>handleRecordClick(EntryConst.FIXEDEXPENSES)}  />
+                    <ARecord Description={EntryConst.FIXEDINCOME}  onClick={()=>handleRecordClick(EntryConst.FIXEDINCOME)}  />
                 </motion.div>
                 { showRecordDiag && <RecordDialouge variant={RecordDiag} /> }
             </motion.div>
