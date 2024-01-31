@@ -7,9 +7,10 @@ import { ArrowRightAlt } from "@mui/icons-material";
 export function ARecord({Description,onClick}){
     return <motion.div onClick={onClick} id="arecord" >
                 <motion.p>{Description}</motion.p>
-                <motion.div id = "arrowDiv">
+                {/* <motion.div id = "arrowDiv">
                     <ArrowRightAlt/>
-                </motion.div>
+                </motion.div> */}
+                <Button variant="contained" >RECORD</Button>
             </motion.div>
 }
 

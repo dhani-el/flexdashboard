@@ -1,5 +1,6 @@
 #entryDiv {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   position: relative;
@@ -7,7 +8,18 @@
   align-items: center;
 }
 #entryDiv p {
+  font-family: "montserrat";
   color: black;
+  font-weight: 700;
+}
+#entryDiv #headerText {
+  font-size: 3rem;
+  font-family: "bebas";
+  align-self: flex-start;
+  position: relative;
+  top: -10%;
+  left: 5%;
+  text-shadow: 2px 2px rgb(43, 42, 42);
 }
 #entryDiv #recordsContainer {
   width: 100%;
@@ -20,19 +32,21 @@
 }
 #entryDiv #recordsContainer #arecord {
   width: 40vw;
-  background-color: whitesmoke;
+  min-height: 25vh;
+  background-color: rgb(182, 253, 253);
   border-radius: 1rem;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 2px 2px 2px 2px black;
 }
-#entryDiv #recordsContainer #arecord #arrowDiv svg {
-  color: black;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-#entryDiv #recordsContainer #arecord #arrowDiv svg path {
-  color: black;
+#entryDiv #recordsContainer #arecord button {
+  background-color: black;
 }
 #entryDiv #recordDialouge {
   position: absolute;
