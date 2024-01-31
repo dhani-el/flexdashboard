@@ -13,6 +13,7 @@ export default function Entry(){
         setRecordDiag(init => recordType )
     }
     return <motion.div id="entryDiv" >
+                <motion.p id="headerText">RECORDS</motion.p>
                 <motion.div id="recordsContainer" >
                     <ARecord Description={EntryConst.MISCELLANEOUSEXPENSES}  onClick={()=>handleRecordClick(EntryConst.MISCELLANEOUSEXPENSES)}  />
                     <ARecord Description={EntryConst.MISCELLANEOUSINCOME}  onClick={()=>handleRecordClick(EntryConst.MISCELLANEOUSINCOME)}  />

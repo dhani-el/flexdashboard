@@ -37,6 +37,7 @@ $landscape-background-color : black;
     background-color: $background-color;
     position: fixed;
     bottom: 1rem;
+    box-shadow: 8px 8px 2px 4px rgb(95, 94, 94) ;
     .navItem{
         display: flex;
         flex-direction: column;
