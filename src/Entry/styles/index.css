@@ -33,7 +33,7 @@
 #entryDiv #recordsContainer #arecord {
   width: 40vw;
   min-height: 25vh;
-  background-color: rgb(182, 253, 253);
+  background-color: whiteSmoke;
   border-radius: 1rem;
   padding: 1rem;
   font-size: 1rem;
@@ -43,11 +43,73 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  box-shadow: 2px 2px 2px 2px black;
+  box-shadow: 2px 2px 2px 2px lightcyan;
 }
 #entryDiv #recordsContainer #arecord button {
-  background-color: black;
+  background-color: darkcyan;
+  font-family: montserrat;
+  font-weight: 700;
 }
 #entryDiv #recordDialouge {
   position: absolute;
+  background-color: lightcyan;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 80%;
+  border-radius: 1rem;
+  border: darkcyan 0.1rem solid;
+}
+#entryDiv #recordDialouge p, #entryDiv #recordDialouge input {
+  color: black;
+}
+#entryDiv #recordDialouge input {
+  font-family: bebas;
+  text-align: center;
+}
+#entryDiv #recordDialouge fieldset {
+  border-color: black;
+}
+#entryDiv #recordDialouge .MuiFormControl-root.MuiTextField-root {
+  width: 80%;
+}
+#entryDiv #recordDialouge #btnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#entryDiv #recordDialouge #btnDiv button {
+  background-color: white;
+  color: black;
+  font-family: montserrat;
+  font-weight: 700;
+}
+#entryDiv #recordDialouge #btnDiv #firstButton {
+  background-color: cyan;
+}
+#entryDiv #recordDialouge #btnDiv #secondButton {
+  background-color: darkcyan;
+}
+
+@media (orientation: landscape) and (min-width: 700px) {
+  #entryDiv #headerText {
+    font-size: 4.5rem;
+  }
+  #entryDiv #recordsContainer #arecord {
+    font-size: 1.5rem;
+  }
+  #entryDiv #recordsContainer #arecord button {
+    font-size: 1.5rem;
+  }
+  #entryDiv #recordDialouge {
+    width: 70%;
+    gap: 2.5rem;
+  }
+  #entryDiv #recordDialouge #btnDiv {
+    justify-content: center;
+    gap: 6rem;
+  }
 }/*# sourceMappingURL=index.css.map */

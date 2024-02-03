@@ -60,7 +60,7 @@ function FirstLevelData({amounts}){
 
 function SingleFirstLevelData({Icon,label,amount}){
     return <motion.div id="SingleFirstLevelDataContainer" >
-                <motion.div className="icon">
+                <motion.div id="icon">
                     {Icon}
                 </motion.div>
                 <motion.div className="details" >
