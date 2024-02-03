@@ -69,11 +69,15 @@ $light-icon-background-color:rgb(172, 172, 172);
             background-color: $card-background-color;
             display: flex;
             align-items: center;
-            .icon{
-                color: $icon-color;
+            #icon{
                 background-color: $icon-background-color;
                 padding:0.2rem;
-                border-radius: 0.2rem;;
+                border-radius: 0.2rem;
+                svg{
+                    path{
+                        color:$icon-color;
+                    }
+                }
             }
             .details{
                 display: flex;
@@ -273,7 +277,7 @@ $light-icon-background-color:rgb(172, 172, 172);
         #SingleFirstLevelDataContainer{
             padding: $default-paddng;
             background-color: $light-card-background-color;
-            .icon{
+            #icon{
                 color: $light-icon-color;
                 background-color: $light-icon-background-color;
             }

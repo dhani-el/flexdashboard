@@ -12,6 +12,12 @@ export default function Entry(){
         setShowRecordDiag(init=>!init);
         setRecordDiag(init => recordType )
     }
+
+    function handleCancleClick(){
+        setShowRecordDiag(init=>!init);
+    }
+
+    
     return <motion.div id="entryDiv" >
                 <motion.p id="headerText">RECORDS</motion.p>
                 <motion.div id="recordsContainer" >
@@ -20,7 +26,7 @@ export default function Entry(){
                     <ARecord Description={EntryConst.FIXEDEXPENSES}  onClick={()=>handleRecordClick(EntryConst.FIXEDEXPENSES)}  />
                     <ARecord Description={EntryConst.FIXEDINCOME}  onClick={()=>handleRecordClick(EntryConst.FIXEDINCOME)}  />
                 </motion.div>
-                { showRecordDiag && <RecordDialouge variant={RecordDiag} /> }
+                { showRecordDiag && <RecordDialouge variant={RecordDiag} handleCancleClick={handleCancleClick} /> }
             </motion.div>
 }
 

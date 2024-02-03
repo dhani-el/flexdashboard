@@ -52,11 +52,13 @@
   display: flex;
   align-items: center;
 }
-#analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
-  color: cyan;
+#analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer #icon {
   background-color: rgb(35, 35, 35);
   padding: 0.2rem;
   border-radius: 0.2rem;
+}
+#analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer #icon svg path {
+  color: cyan;
 }
 #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details {
   display: flex;
@@ -244,7 +246,7 @@
   padding: 1rem;
   background-color: whitesmoke;
 }
-#analyticsContainer.light #FirstLevelDataContainer #SingleFirstLevelDataContainer .icon {
+#analyticsContainer.light #FirstLevelDataContainer #SingleFirstLevelDataContainer #icon {
   color: cyan;
   background-color: rgb(172, 172, 172);
 }
