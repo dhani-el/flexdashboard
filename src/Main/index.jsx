@@ -7,10 +7,10 @@ import { navConstants } from "../constants";
 import "../styles/main.css";
 
 export default function MainContainer(){
-    const [page, setPage] = useState(navConstants.HOME);
+    const [page, setPage] = useState(navConstants.RECORD);
     const [darkMode, setDarkMode] = useState(false);
     
-    return (<motion.div className="container">
+    return (<motion.div className="container" id={darkMode ? "" : "lightmode"}>
                 <motion.div id="pageContent" >
                     {page === navConstants.ANALYTICS && <Analytics theme={darkMode} /> }
                     {page === navConstants.RECORD && <Entry  /> }

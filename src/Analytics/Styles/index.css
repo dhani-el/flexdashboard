@@ -71,7 +71,9 @@
   color: grey;
 }
 #analyticsContainer #FirstLevelDataContainer #SingleFirstLevelDataContainer .details .amount {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: montserrat;
 }
 #analyticsContainer #overviewAndExpectationsDiv {
   width: 100%;
