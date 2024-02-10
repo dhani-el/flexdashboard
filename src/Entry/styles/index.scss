@@ -118,6 +118,7 @@ $record-background-color:lightcyan;
         #recordsContainer{
             #arecord{
                 font-size: $landscape-default-font-size;
+                box-shadow: none;
                 button{
                     font-size: 1.5rem;
                 }

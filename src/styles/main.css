@@ -39,4 +39,27 @@ body {
 .container {
   width: 100%;
   height: 100%;
+  background-color: rgb(35, 35, 37);
+}
+.container #entryDiv #headerText {
+  color: white;
+}
+.container #entryDiv #recordsContainer #arecord {
+  background-color: black;
+}
+.container #entryDiv #recordsContainer #arecord p {
+  color: white;
+}
+
+.container#lightmode {
+  background-color: white;
+}
+.container#lightmode #entryDiv #headerText {
+  color: black;
+}
+.container#lightmode #entryDiv #recordsContainer #arecord {
+  background-color: whitesmoke;
+}
+.container#lightmode #entryDiv #recordsContainer #arecord p {
+  color: black;
 }/*# sourceMappingURL=main.css.map */

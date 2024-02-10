@@ -57,4 +57,37 @@ body{
 .container{
     width: 100%;
     height: 100%;
+    background-color: $background-color;
+    #entryDiv{
+        #headerText{
+            color: $primary-text-color;
+        }
+        #recordsContainer{
+            #arecord{
+                background-color: $card-background-color;
+                p{
+                    color: $primary-text-color;
+                }
+                
+            }
+        }
+    }
+}
+
+.container#lightmode{
+    background-color: $light-background-color;
+    #entryDiv{
+        #headerText{
+            color:$light-primary-text-color;
+        }
+        #recordsContainer{
+            #arecord{
+                background-color: $light-card-background-color;
+                p{
+                    color: $light-primary-text-color;
+                }
+
+            }
+        }
+    }
 }
